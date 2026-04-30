@@ -8,6 +8,7 @@ class Requete
     public string $uri;
     public array $corps;
     public array $entetes;
+    public array $parametres = [];
 
     public function __construct()
     {

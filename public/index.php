@@ -15,4 +15,15 @@ $app->routeur->get('/json', function () {
     return Reponse::json(['message' => 'Bonjour le monde !', 'framework' => 'Flèche']);
 });
 
+$app->routeur->get('/utilisateurs/{id}', function ($req) {
+    return Reponse::json(['id' => $req->parametres['id']]);
+});
+
+$app->routeur->get('/articles/{categorie}/{slug}', function ($req) {
+    return Reponse::json([
+        'categorie' => $req->parametres['categorie'],
+        'slug'      => $req->parametres['slug'],
+    ]);
+});
+
 $app->demarrer();
