@@ -1,0 +1,13 @@
+{
+    "name": "fleche/fleche",
+    "description": "Framework PHP en français",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Fleche\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=8.0"
+    }
+}
