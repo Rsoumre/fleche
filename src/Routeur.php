@@ -12,31 +12,42 @@ class Routeur
         $this->requete = $requete;
     }
 
-    public function get(string $uri, callable|array $action): void
+    public function get(string $uri, callable|array $action): Route
     {
-        $this->routes[] = ['methode' => 'GET', 'uri' => $uri, 'action' => $action];
+        return $this->ajouter('GET', $uri, $action);
     }
 
-    public function post(string $uri, callable|array $action): void
+    public function post(string $uri, callable|array $action): Route
     {
-        $this->routes[] = ['methode' => 'POST', 'uri' => $uri, 'action' => $action];
+        return $this->ajouter('POST', $uri, $action);
+    }
+
+    private function ajouter(string $methode, string $uri, callable|array $action): Route
+    {
+        $route = new Route($methode, $uri, $action);
+        $this->routes[] = $route;
+        return $route;
     }
 
     public function resoudre(): Reponse
     {
         foreach ($this->routes as $route) {
-            if ($route['methode'] !== $this->requete->methode) {
+            if ($route->methode !== $this->requete->methode) {
                 continue;
             }
 
-            $parametres = $this->correspondre($route['uri'], $this->requete->uri);
+            $parametres = $this->correspondre($route->uri, $this->requete->uri);
 
             if ($parametres === null) {
                 continue;
             }
 
             $this->requete->parametres = $parametres;
-            $resultat = $this->appeler($route['action'], $this->requete);
+
+            $action = fn(Requete $req) => $this->appeler($route->action, $req);
+            $pipeline = $this->construirePipeline($route->middlewares, $action);
+
+            $resultat = $pipeline($this->requete);
 
             if ($resultat instanceof Reponse) {
                 return $resultat;
@@ -45,6 +56,18 @@ class Routeur
         }
 
         return Reponse::texte('404 — Page non trouvée', 404);
+    }
+
+    private function construirePipeline(array $middlewares, callable $action): callable
+    {
+        $pipeline = $action;
+
+        foreach (array_reverse($middlewares) as $classe) {
+            $suivant  = $pipeline;
+            $pipeline = fn(Requete $req) => (new $classe())->traiter($req, $suivant);
+        }
+
+        return $pipeline;
     }
 
     private function appeler(callable|array $action, Requete $requete): mixed
