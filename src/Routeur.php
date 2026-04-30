@@ -12,12 +12,12 @@ class Routeur
         $this->requete = $requete;
     }
 
-    public function get(string $uri, callable $action): void
+    public function get(string $uri, callable|array $action): void
     {
         $this->routes[] = ['methode' => 'GET', 'uri' => $uri, 'action' => $action];
     }
 
-    public function post(string $uri, callable $action): void
+    public function post(string $uri, callable|array $action): void
     {
         $this->routes[] = ['methode' => 'POST', 'uri' => $uri, 'action' => $action];
     }
@@ -36,7 +36,7 @@ class Routeur
             }
 
             $this->requete->parametres = $parametres;
-            $resultat = ($route['action'])($this->requete);
+            $resultat = $this->appeler($route['action'], $this->requete);
 
             if ($resultat instanceof Reponse) {
                 return $resultat;
@@ -45,6 +45,16 @@ class Routeur
         }
 
         return Reponse::texte('404 — Page non trouvée', 404);
+    }
+
+    private function appeler(callable|array $action, Requete $requete): mixed
+    {
+        if (is_array($action)) {
+            [$classe, $methode] = $action;
+            return (new $classe())->$methode($requete);
+        }
+
+        return $action($requete);
     }
 
     private function correspondre(string $routeUri, string $uriActuelle): ?array
