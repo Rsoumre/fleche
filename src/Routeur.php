@@ -55,7 +55,7 @@ class Routeur
             return Reponse::texte((string) $resultat);
         }
 
-        return Reponse::texte('404 — Page non trouvée', 404);
+        return new Reponse(Vue::rendu('404'), 404, ['Content-Type' => 'text/html; charset=UTF-8']);
     }
 
     private function construirePipeline(array $middlewares, callable $action): callable

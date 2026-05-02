@@ -10,6 +10,8 @@ class Application
     public function __construct()
     {
         Env::charger(dirname(__DIR__) . '/.env');
+        GestionnaireErreurs::enregistrer();
+        Session::demarrer();
         $this->requete = new Requete();
         $this->routeur = new Routeur($this->requete);
     }
