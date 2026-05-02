@@ -31,6 +31,15 @@ class UtilisateurControleur extends Controleur
 
     public function creer(Requete $req): Reponse
     {
+        $erreurs = $req->valider([
+            'nom'   => 'requis|chaine|max:100',
+            'email' => 'requis|email|max:150',
+        ]);
+
+        if (!empty($erreurs)) {
+            return Reponse::json(['erreurs' => $erreurs], 422);
+        }
+
         $id = DB::table('utilisateurs')->inserer([
             'nom'   => $req->entree('nom'),
             'email' => $req->entree('email'),

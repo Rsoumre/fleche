@@ -27,4 +27,9 @@ class Requete
     {
         return $this->corps[$cle] ?? $defaut;
     }
+
+    public function valider(array $regles): array
+    {
+        return (new Validateur($this->corps, $regles))->valider();
+    }
 }
