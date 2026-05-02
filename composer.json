@@ -5,7 +5,10 @@
     "autoload": {
         "psr-4": {
             "Fleche\\": "src/"
-        }
+        },
+        "files": [
+            "src/helpers.php"
+        ]
     },
     "require": {
         "php": ">=8.0"
