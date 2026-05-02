@@ -16,11 +16,9 @@ $app->routeur->get('/', function () {
     ]);
 });
 
-// Route publique
-$app->routeur->get('/utilisateurs', [UtilisateurControleur::class, 'liste']);
-
-// Route protégée par le middleware d'authentification
-$app->routeur->get('/utilisateurs/{id}', [UtilisateurControleur::class, 'afficher'])
-             ->middleware(AuthMiddleware::class);
+$app->routeur->get('/utilisateurs',        [UtilisateurControleur::class, 'liste']);
+$app->routeur->get('/utilisateurs/{id}',   [UtilisateurControleur::class, 'afficher']);
+$app->routeur->post('/utilisateurs',       [UtilisateurControleur::class, 'creer']);
+$app->routeur->post('/utilisateurs/{id}/supprimer', [UtilisateurControleur::class, 'supprimer']);
 
 $app->demarrer();
