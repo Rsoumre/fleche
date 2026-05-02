@@ -2,10 +2,11 @@
 
 namespace Fleche\Controleurs;
 
+use Fleche\Controleur;
 use Fleche\Requete;
 use Fleche\Reponse;
 
-class UtilisateurControleur
+class UtilisateurControleur extends Controleur
 {
     public function liste(Requete $req): Reponse
     {
@@ -14,7 +15,7 @@ class UtilisateurControleur
             ['id' => 2, 'nom' => 'Fatou'],
         ];
 
-        return Reponse::json($utilisateurs);
+        return $this->vue('utilisateurs', ['utilisateurs' => $utilisateurs]);
     }
 
     public function afficher(Requete $req): Reponse

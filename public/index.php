@@ -10,7 +10,10 @@ use Fleche\Middlewares\AuthMiddleware;
 $app = new Application();
 
 $app->routeur->get('/', function () {
-    return Reponse::texte('Bonjour depuis Flèche !');
+    return Reponse::vue('accueil', [
+        'titre'       => 'Bienvenue sur Flèche !',
+        'description' => 'Un framework PHP en français.',
+    ]);
 });
 
 // Route publique

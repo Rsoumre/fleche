@@ -20,6 +20,15 @@ class Reponse
         return new self($contenu, $statut, ['Content-Type' => 'text/plain; charset=UTF-8']);
     }
 
+    public static function vue(string $nom, array $donnees = [], int $statut = 200): self
+    {
+        return new self(
+            Vue::rendu($nom, $donnees),
+            $statut,
+            ['Content-Type' => 'text/html; charset=UTF-8']
+        );
+    }
+
     public static function json(mixed $donnees, int $statut = 200): self
     {
         return new self(
