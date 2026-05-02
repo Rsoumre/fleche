@@ -1,5 +1,5 @@
 {
-    "name": "fleche/fleche",
+    "name": "rsoumre/fleche",
     "description": "Framework PHP en français",
     "type": "library",
     "autoload": {
