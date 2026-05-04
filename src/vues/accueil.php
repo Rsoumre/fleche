@@ -4,6 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($titre) ?></title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/images/logo.svg">
+    <link rel="shortcut icon" href="/images/logo.svg">
+
+    <!-- SEO -->
+    <meta name="description" content="<?= htmlspecialchars($description) ?>">
+    <meta name="keywords" content="framework PHP, PHP français, framework français, Flèche">
+    <meta name="author" content="Rsoumre">
+
+    <!-- Open Graph (réseaux sociaux + aperçu navigateur) -->
+    <meta property="og:title" content="Flèche — Framework PHP en français">
+    <meta property="og:description" content="<?= htmlspecialchars($description) ?>">
+    <meta property="og:image" content="/images/logo.svg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rsoumre.github.io/fleche/">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Flèche — Framework PHP en français">
+    <meta name="twitter:description" content="<?= htmlspecialchars($description) ?>">
+    <meta name="twitter:image" content="/images/logo.svg">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
