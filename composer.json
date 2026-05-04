@@ -1,7 +1,11 @@
 {
     "name": "rsoumre/fleche",
     "description": "Framework PHP en français",
+    "version": "1.0.0",
     "type": "library",
+    "keywords": ["framework", "php", "français", "french"],
+    "license": "MIT",
+    "homepage": "https://rsoumre.github.io/fleche/",
     "autoload": {
         "psr-4": {
             "Fleche\\": "src/"
