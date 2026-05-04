@@ -7,7 +7,9 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/images/logo.svg">
-    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="icon" type="image/png" href="/images/logo.png">
+    <link rel="shortcut icon" href="/images/logo.png">
+    <link rel="apple-touch-icon" href="/images/logo.png">
 
     <!-- SEO -->
     <meta name="description" content="<?= htmlspecialchars($description) ?>">
@@ -17,7 +19,9 @@
     <!-- Open Graph (réseaux sociaux + aperçu navigateur) -->
     <meta property="og:title" content="Flèche — Framework PHP en français">
     <meta property="og:description" content="<?= htmlspecialchars($description) ?>">
-    <meta property="og:image" content="/images/logo.svg">
+    <meta property="og:image" content="https://rsoumre.github.io/fleche/images/logo.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://rsoumre.github.io/fleche/">
 
@@ -25,7 +29,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Flèche — Framework PHP en français">
     <meta name="twitter:description" content="<?= htmlspecialchars($description) ?>">
-    <meta name="twitter:image" content="/images/logo.svg">
+    <meta name="twitter:image" content="https://rsoumre.github.io/fleche/images/logo.png">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
