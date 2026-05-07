@@ -29,12 +29,20 @@
 }
 
 /* ---- SIDEBAR ---- */
+.md-sidebar--primary {
+  background: var(--fleche-sidebar) !important;
+}
+
 .md-sidebar--primary .md-sidebar__scrollwrap {
-  background: var(--fleche-sidebar);
+  background: var(--fleche-sidebar) !important;
 }
 
 .md-nav--primary {
-  background: var(--fleche-sidebar);
+  background: var(--fleche-sidebar) !important;
+}
+
+[data-md-color-scheme="default"] .md-sidebar--primary {
+  background: var(--fleche-sidebar) !important;
 }
 
 .md-nav--primary .md-nav__title {
