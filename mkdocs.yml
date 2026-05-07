@@ -12,11 +12,10 @@ extra_css:
 theme:
   name: material
   language: fr
-  favicon: https://raw.githubusercontent.com/Rsoumre/fleche/main/docs/logo.png
   palette:
-    - scheme: default
-      primary: custom
-      accent: custom
+    scheme: slate
+    primary: custom
+    accent: custom
   font:
     text: Inter
     code: JetBrains Mono
