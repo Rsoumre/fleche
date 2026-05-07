@@ -29,12 +29,24 @@ $app->routeur->get('/categories/{categorie}/articles/{slug}', function ($req) {
 });
 ```
 
-## Utiliser un contrôleur
+## Toutes les méthodes HTTP
 
 ```php
-$app->routeur->get('/articles', [ArticleControleur::class, 'liste']);
-$app->routeur->get('/articles/{id}', [ArticleControleur::class, 'afficher']);
-$app->routeur->post('/articles', [ArticleControleur::class, 'creer']);
+$app->routeur->get('/articles',        [ArticleControleur::class, 'liste']);
+$app->routeur->post('/articles',       [ArticleControleur::class, 'creer']);
+$app->routeur->put('/articles/{id}',   [ArticleControleur::class, 'modifier']);
+$app->routeur->patch('/articles/{id}', [ArticleControleur::class, 'mettreAJour']);
+$app->routeur->delete('/articles/{id}',[ArticleControleur::class, 'supprimer']);
+```
+
+### Formulaires HTML (PUT / PATCH / DELETE)
+
+Les formulaires HTML ne supportent que `GET` et `POST`. Utilisez le champ caché `_method` :
+
+```html
+<form method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+</form>
 ```
 
 ## Ajouter un middleware

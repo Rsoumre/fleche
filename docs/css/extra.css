@@ -1,0 +1,39 @@
+:root {
+    --md-primary-fg-color: #1a1a1a;
+    --md-primary-fg-color--light: #333333;
+    --md-primary-fg-color--dark: #000000;
+    --md-accent-fg-color: #1a1a1a;
+}
+
+/* Texte principal en noir */
+.md-content {
+    color: #1a1a1a;
+}
+
+/* Liens en noir souligné */
+.md-content a {
+    color: #1a1a1a;
+    text-decoration: underline;
+}
+
+.md-content a:hover {
+    color: #444444;
+}
+
+/* Titres en noir */
+.md-content h1,
+.md-content h2,
+.md-content h3 {
+    color: #000000;
+    font-weight: 700;
+}
+
+/* Barre latérale navigation */
+.md-nav__link {
+    color: #1a1a1a;
+}
+
+.md-nav__link--active {
+    color: #000000;
+    font-weight: 600;
+}

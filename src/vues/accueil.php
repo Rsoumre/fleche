@@ -363,7 +363,7 @@
     <section class="hero">
         <img src="/images/logo.svg" alt="Logo Flèche" class="logo">
         <div class="badge">Framework PHP · Open Source</div>
-        <h1><span>Flèche</span></h1>
+        <h1><span><?= htmlspecialchars($titre) ?></span></h1>
         <p class="sous-titre"><?= htmlspecialchars($description) ?></p>
         <div class="boutons">
             <a href="https://rsoumre.github.io/fleche/" class="btn-principal" target="_blank">Documentation</a>

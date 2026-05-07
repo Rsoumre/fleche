@@ -57,8 +57,35 @@ class Validateur
                 $valeur === null || is_numeric($valeur),
                 $champ, "Le champ {$champ} doit être un nombre."
             ),
+            'unique'   => $this->verifierUnique($champ, $valeur, $param),
+            'confirme' => $this->verifier(
+                $valeur === ($this->donnees[($param ?? $champ) . '_confirmation'] ?? null),
+                $champ, "Le champ {$champ} ne correspond pas à sa confirmation."
+            ),
             default   => null,
         };
+    }
+
+    private function verifierUnique(string $champ, mixed $valeur, ?string $param): void
+    {
+        if ($valeur === null || $valeur === '') {
+            return;
+        }
+
+        // syntaxe : unique:table,colonne  (colonne optionnelle, utilise $champ par défaut)
+        [$table, $colonne] = explode(',', $param ?? '', 2) + [null, $champ];
+
+        if ($table === null) {
+            return;
+        }
+
+        $existe = DB::table($table)->filtrer($colonne, $valeur)->compter() > 0;
+
+        $this->verifier(
+            !$existe,
+            $champ,
+            "La valeur du champ {$champ} est déjà utilisée."
+        );
     }
 
     private function verifier(bool $condition, string $champ, string $message): void

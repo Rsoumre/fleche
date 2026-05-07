@@ -12,13 +12,13 @@
         <meta name="author" content="Rsoumre">
       
       
-        <link rel="canonical" href="https://rsoumre.github.io/fleche/validation/">
+        <link rel="canonical" href="https://rsoumre.github.io/fleche/reponse/">
       
       
-        <link rel="prev" href="../sessions/">
+        <link rel="prev" href="../vues/">
       
       
-        <link rel="next" href="../base-de-donnees/">
+        <link rel="next" href="../middlewares/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Validation - Flèche</title>
+        <title>Réponse - Flèche</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#validation" class="md-skip">
+        <a href="#reponse" class="md-skip">
           Aller au contenu
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Validation
+              Réponse
             
           </span>
         </div>
@@ -479,10 +479,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../reponse/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Réponse
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -498,6 +525,59 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#types-de-reponses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types de réponses
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-http-personnalise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code HTTP personnalisé
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tableau-des-methodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tableau des méthodes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -563,37 +643,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Validation
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../validation/" class="md-nav__link">
         
   
   
@@ -609,92 +662,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table des matières
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#utilisation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Utilisation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#regles-disponibles" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Règles disponibles
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exemple-de-reponse-derreur" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exemple de réponse d'erreur
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#combiner-plusieurs-regles" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Combiner plusieurs règles
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#regle-unique" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Règle unique
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#regle-confirme" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Règle confirme
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -818,10 +785,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#utilisation" class="md-nav__link">
+  <a href="#types-de-reponses" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Utilisation
+        Types de réponses
       
     </span>
   </a>
@@ -829,10 +796,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#regles-disponibles" class="md-nav__link">
+  <a href="#code-http-personnalise" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Règles disponibles
+        Code HTTP personnalisé
       
     </span>
   </a>
@@ -840,43 +807,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exemple-de-reponse-derreur" class="md-nav__link">
+  <a href="#tableau-des-methodes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Exemple de réponse d'erreur
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#combiner-plusieurs-regles" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Combiner plusieurs règles
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#regle-unique" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Règle unique
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#regle-confirme" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Règle confirme
+        Tableau des méthodes
       
     </span>
   </a>
@@ -903,95 +837,52 @@
   
 
 
-<h1 id="validation">Validation</h1>
-<p>Flèche permet de valider les données envoyées par l'utilisateur.</p>
-<h2 id="utilisation">Utilisation</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="x">$erreurs = $req-&gt;valider([</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="x">    &#39;nom&#39;    =&gt; &#39;requis|chaine|max:100&#39;,</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="x">    &#39;email&#39;  =&gt; &#39;requis|email&#39;,</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="x">    &#39;age&#39;    =&gt; &#39;requis|entier&#39;,</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="x">]);</span>
+<h1 id="reponse">Réponse</h1>
+<h2 id="types-de-reponses">Types de réponses</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="x">// Texte brut</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="x">return Reponse::texte(&#39;Bonjour !&#39;);</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="x">// JSON</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="x">return Reponse::json([&#39;statut&#39; =&gt; &#39;ok&#39;]);</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="x">if (!empty($erreurs)) {</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="x">    return Reponse::json([&#39;erreurs&#39; =&gt; $erreurs], 422);</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="x">}</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="x">// Vue HTML</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="x">return Reponse::vue(&#39;accueil&#39;, [&#39;titre&#39; =&gt; &#39;Bienvenue&#39;]);</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="x">// Redirection</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="x">return Reponse::rediriger(&#39;/connexion&#39;);</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="x">return Reponse::rediriger(&#39;/articles&#39;, 301); // redirection permanente</span>
 </code></pre></div>
-<h2 id="regles-disponibles">Règles disponibles</h2>
+<h2 id="code-http-personnalise">Code HTTP personnalisé</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="x">return Reponse::json([&#39;erreur&#39; =&gt; &#39;Non autorisé&#39;], 401);</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="x">return Reponse::vue(&#39;erreur&#39;, [], 500);</span>
+</code></pre></div>
+<h2 id="tableau-des-methodes">Tableau des méthodes</h2>
 <table>
 <thead>
 <tr>
-<th>Règle</th>
+<th>Méthode</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>requis</code></td>
-<td>Le champ ne peut pas être vide</td>
+<td><code>Reponse::texte($contenu, $statut)</code></td>
+<td>Réponse texte brut</td>
 </tr>
 <tr>
-<td><code>chaine</code></td>
-<td>Doit être du texte</td>
+<td><code>Reponse::json($donnees, $statut)</code></td>
+<td>Réponse JSON</td>
 </tr>
 <tr>
-<td><code>entier</code></td>
-<td>Doit être un nombre entier</td>
+<td><code>Reponse::vue($nom, $donnees, $statut)</code></td>
+<td>Réponse HTML via une vue</td>
 </tr>
 <tr>
-<td><code>numerique</code></td>
-<td>Doit être un nombre (entier ou décimal)</td>
-</tr>
-<tr>
-<td><code>email</code></td>
-<td>Doit être une adresse email valide</td>
-</tr>
-<tr>
-<td><code>min:X</code></td>
-<td>Doit contenir au minimum X caractères</td>
-</tr>
-<tr>
-<td><code>max:X</code></td>
-<td>Ne doit pas dépasser X caractères</td>
-</tr>
-<tr>
-<td><code>unique:table,colonne</code></td>
-<td>La valeur ne doit pas déjà exister en base</td>
-</tr>
-<tr>
-<td><code>confirme</code></td>
-<td>Doit correspondre au champ <code>{champ}_confirmation</code></td>
+<td><code>Reponse::rediriger($url, $statut)</code></td>
+<td>Redirection (302 par défaut)</td>
 </tr>
 </tbody>
 </table>
-<h2 id="exemple-de-reponse-derreur">Exemple de réponse d'erreur</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&quot;erreurs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="nt">&quot;nom&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Le champ nom est obligatoire.&quot;</span><span class="p">],</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Le champ email doit être une adresse email valide.&quot;</span><span class="p">]</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">}</span>
-</code></pre></div>
-<h2 id="combiner-plusieurs-regles">Combiner plusieurs règles</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="x">$req-&gt;valider([</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="x">    &#39;mot_de_passe&#39; =&gt; &#39;requis|chaine|min:8|max:100&#39;,</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="x">]);</span>
-</code></pre></div>
-<h2 id="regle-unique">Règle <code>unique</code></h2>
-<p>Vérifie que la valeur n'existe pas déjà dans la base de données.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="x">$req-&gt;valider([</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="x">    &#39;email&#39;  =&gt; &#39;requis|email|unique:utilisateurs,email&#39;,</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="x">    &#39;pseudo&#39; =&gt; &#39;requis|unique:utilisateurs&#39;, // colonne = nom du champ par défaut</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="x">]);</span>
-</code></pre></div>
-<h2 id="regle-confirme">Règle <code>confirme</code></h2>
-<p>Vérifie que la valeur correspond au champ <code>{champ}_confirmation</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="x">$req-&gt;valider([</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="x">    &#39;mot_de_passe&#39; =&gt; &#39;requis|min:8|confirme&#39;,</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="x">]);</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;mot_de_passe&quot;</span><span class="p">&gt;</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;mot_de_passe_confirmation&quot;</span><span class="p">&gt;</span>
-</code></pre></div>
 
 
 
