@@ -1,22 +1,19 @@
-  name: Deploy docs
-                                                                                                                                                                                     
-  on:                                     
-    push:
-      branches: [main]
+name: Deploy docs
 
-  permissions:
-    contents: write
-                                                                                                                                                                                     
-  jobs:
-    deploy:                                                                                                                                                                          
-      runs-on: ubuntu-latest              
-      steps:
-        - uses: actions/checkout@v4
-        - uses: actions/setup-python@v5
-          with:
-            python-version: '3.x'
-        - run: pip install mkdocs-material
-        - run: mkdocs gh-deploy --force                                                                                                                                              
-  EOF
-  git add .github && git commit -m "Ajout GitHub Actions pour déploiement docs" && git push 
+on:
+  push:
+    branches: [main]
 
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - run: pip install mkdocs-material
+      - run: mkdocs gh-deploy --force
