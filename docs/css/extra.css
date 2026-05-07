@@ -1,125 +1,221 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+/* ============================================
+   FLÈCHE DOCS — Inspiré de Laravel
+   ============================================ */
 
-/* Fonts */
+/* Variables de couleurs */
 :root {
-    --md-text-font: "Inter", sans-serif;
-    --md-code-font: "JetBrains Mono", monospace;
-    --md-primary-fg-color: #111827;
-    --md-primary-fg-color--light: #374151;
-    --md-primary-fg-color--dark: #000000;
-    --md-accent-fg-color: #111827;
+  --fleche-red: #f05340;
+  --fleche-red-dark: #c0392b;
+  --fleche-dark: #1a1a2e;
+  --fleche-sidebar: #16213e;
+  --fleche-sidebar-hover: #0f3460;
+  --md-primary-fg-color: var(--fleche-red);
+  --md-primary-fg-color--light: #f47c6a;
+  --md-primary-fg-color--dark: var(--fleche-red-dark);
+  --md-accent-fg-color: var(--fleche-red);
+  --md-typeset-a-color: var(--fleche-red);
 }
 
-/* Contenu principal */
+/* ---- HEADER ---- */
+.md-header {
+  background: var(--fleche-dark) !important;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.md-header__title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.3px;
+}
+
+/* ---- SIDEBAR ---- */
+.md-sidebar--primary .md-sidebar__scrollwrap {
+  background: var(--fleche-sidebar);
+}
+
+.md-nav--primary {
+  background: var(--fleche-sidebar);
+}
+
+.md-nav--primary .md-nav__title {
+  background: var(--fleche-dark);
+  color: rgba(255,255,255,0.9);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 1rem 1.2rem 0.6rem;
+}
+
+.md-nav--primary .md-nav__item .md-nav__link {
+  color: rgba(255,255,255,0.65);
+  font-size: 0.9rem;
+  padding: 0.4rem 1.2rem;
+  border-radius: 0;
+  transition: all 0.15s ease;
+}
+
+.md-nav--primary .md-nav__item .md-nav__link:hover {
+  color: #ffffff;
+  background: rgba(255,255,255,0.06);
+}
+
+.md-nav--primary .md-nav__item .md-nav__link--active {
+  color: #ffffff !important;
+  font-weight: 600;
+  border-left: 3px solid var(--fleche-red);
+  padding-left: calc(1.2rem - 3px);
+}
+
+/* ---- CONTENU PRINCIPAL ---- */
 .md-content {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: #111827;
+  max-width: 860px;
 }
 
-/* Titres */
-.md-content h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #111827;
-    border-bottom: 2px solid #e5e7eb;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
+.md-typeset {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #374151;
 }
 
-.md-content h2 {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #111827;
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
-    border-left: 4px solid #111827;
-    padding-left: 12px;
+/* ---- TITRES ---- */
+.md-typeset h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.5px;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
 }
 
-.md-content h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #1f2937;
-    margin-top: 1.5rem;
+.md-typeset h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #111827;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #f3f4f6;
 }
 
-/* Paragraphes */
-.md-content p {
-    color: #374151;
-    line-height: 1.8;
+.md-typeset h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-top: 1.8rem;
 }
 
-/* Liens */
-.md-content a {
-    color: #111827;
-    font-weight: 500;
-    text-decoration: underline;
-    text-underline-offset: 3px;
+/* ---- PARAGRAPHES ---- */
+.md-typeset p {
+  color: #374151;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
 }
 
-.md-content a:hover {
-    color: #374151;
+/* ---- LIENS ---- */
+.md-typeset a {
+  color: var(--fleche-red);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s;
 }
 
-/* Tableaux */
-.md-content table {
-    border-collapse: collapse;
-    width: 100%;
-    font-size: 0.95rem;
+.md-typeset a:hover {
+  border-bottom-color: var(--fleche-red);
 }
 
-.md-content th {
-    background: #f9fafb;
-    color: #111827;
-    font-weight: 600;
-    padding: 10px 16px;
-    border: 1px solid #e5e7eb;
-    text-align: left;
+/* ---- CODE INLINE ---- */
+.md-typeset code:not(pre > code) {
+  background: #fef2f2;
+  color: #dc2626;
+  padding: 2px 7px;
+  border-radius: 5px;
+  font-size: 0.875em;
+  font-weight: 500;
+  border: 1px solid #fee2e2;
 }
 
-.md-content td {
-    padding: 10px 16px;
-    border: 1px solid #e5e7eb;
-    color: #374151;
+/* ---- BLOCS DE CODE ---- */
+.md-typeset pre {
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
-.md-content tr:nth-child(even) td {
-    background: #f9fafb;
+.md-typeset pre > code {
+  font-size: 0.9rem;
+  line-height: 1.7;
 }
 
-/* Code inline */
-.md-content code:not(pre code) {
-    background: #f3f4f6;
-    color: #111827;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 0.875em;
-    font-family: "JetBrains Mono", monospace;
+/* ---- TABLEAUX ---- */
+.md-typeset table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
 }
 
-/* Bloc de code */
-.md-content pre {
-    border-radius: 8px;
-    border: 1px solid #e5e7eb;
+.md-typeset table th {
+  background: #f9fafb;
+  color: #111827;
+  font-weight: 600;
+  padding: 12px 16px;
+  border-bottom: 2px solid #e5e7eb;
+  text-align: left;
 }
 
-/* Sidebar nav */
-.md-nav__title {
-    font-weight: 700;
-    color: #111827;
+.md-typeset table td {
+  padding: 10px 16px;
+  border-bottom: 1px solid #f3f4f6;
+  color: #374151;
 }
 
-.md-nav__link {
-    color: #374151;
-    font-size: 0.9rem;
+.md-typeset table tr:last-child td {
+  border-bottom: none;
 }
 
-.md-nav__link:hover {
-    color: #111827;
+.md-typeset table tr:hover td {
+  background: #fafafa;
 }
 
-.md-nav__link--active {
-    color: #111827 !important;
-    font-weight: 600;
+/* ---- SÉPARATEUR HR ---- */
+.md-typeset hr {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 2.5rem 0;
+}
+
+/* ---- BLOCKQUOTE ---- */
+.md-typeset blockquote {
+  border-left: 4px solid var(--fleche-red);
+  background: #fff5f5;
+  padding: 1rem 1.5rem;
+  border-radius: 0 8px 8px 0;
+  color: #374151;
+  font-style: normal;
+}
+
+.md-typeset blockquote p {
+  margin: 0;
+}
+
+/* ---- TOC (table des matières) ---- */
+.md-nav--secondary .md-nav__link {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.md-nav--secondary .md-nav__link--active {
+  color: var(--fleche-red) !important;
+  font-weight: 600;
+}
+
+/* ---- FOOTER ---- */
+.md-footer {
+  background: var(--fleche-dark);
 }

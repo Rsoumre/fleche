@@ -12,25 +12,23 @@ extra_css:
 theme:
   name: material
   language: fr
+  favicon: https://raw.githubusercontent.com/Rsoumre/fleche/main/docs/logo.png
   palette:
     - scheme: default
-      primary: black
-      accent: black
-      toggle:
-        icon: material/brightness-7
-        name: Mode sombre
-    - scheme: slate
-      primary: black
-      accent: black
-      toggle:
-        icon: material/brightness-4
-        name: Mode clair
+      primary: custom
+      accent: custom
+  font:
+    text: Inter
+    code: JetBrains Mono
   features:
     - navigation.tabs
     - navigation.sections
     - navigation.top
+    - navigation.instant
     - search.highlight
+    - search.suggest
     - content.code.copy
+    - toc.follow
 
 nav:
   - Accueil: index.md
@@ -49,8 +47,13 @@ nav:
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
+      use_pygments: true
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.inlinehilite
   - admonition
+  - pymdownx.details
   - tables
+  - toc:
+      permalink: true
