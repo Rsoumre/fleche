@@ -27,8 +27,6 @@ if (!empty($erreurs)) {
 | `email` | Doit être une adresse email valide |
 | `min:X` | Doit contenir au minimum X caractères |
 | `max:X` | Ne doit pas dépasser X caractères |
-| `unique:table,colonne` | La valeur ne doit pas déjà exister en base |
-| `confirme` | Doit correspondre au champ `{champ}_confirmation` |
 
 ## Exemple de réponse d'erreur
 
@@ -47,30 +45,4 @@ if (!empty($erreurs)) {
 $req->valider([
     'mot_de_passe' => 'requis|chaine|min:8|max:100',
 ]);
-```
-
-## Règle `unique`
-
-Vérifie que la valeur n'existe pas déjà dans la base de données.
-
-```php
-$req->valider([
-    'email'  => 'requis|email|unique:utilisateurs,email',
-    'pseudo' => 'requis|unique:utilisateurs', // colonne = nom du champ par défaut
-]);
-```
-
-## Règle `confirme`
-
-Vérifie que la valeur correspond au champ `{champ}_confirmation`.
-
-```php
-$req->valider([
-    'mot_de_passe' => 'requis|min:8|confirme',
-]);
-```
-
-```html
-<input type="password" name="mot_de_passe">
-<input type="password" name="mot_de_passe_confirmation">
 ```

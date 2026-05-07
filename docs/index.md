@@ -49,8 +49,6 @@ $app->demarrer();
 - [Vues](vues.md)
 - [Base de données](base-de-donnees.md)
 - [Validation](validation.md)
-- [Réponse](reponse.md)
-- [Upload de fichiers](fichiers.md)
 - [Middlewares](middlewares.md)
 - [Sessions](sessions.md)
 - [Variables d'environnement](env.md)

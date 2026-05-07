@@ -2,46 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://rsoumre.github.io/fleche/</loc>
-         <lastmod>2026-05-07</lastmod>
+         <lastmod>2026-05-02</lastmod>
     </url>
     <url>
          <loc>https://rsoumre.github.io/fleche/base-de-donnees/</loc>
-         <lastmod>2026-05-07</lastmod>
+         <lastmod>2026-05-02</lastmod>
     </url>
     <url>
          <loc>https://rsoumre.github.io/fleche/controleurs/</loc>
-         <lastmod>2026-05-07</lastmod>
+         <lastmod>2026-05-02</lastmod>
     </url>
     <url>
          <loc>https://rsoumre.github.io/fleche/env/</loc>
-         <lastmod>2026-05-07</lastmod>
-    </url>
-    <url>
-         <loc>https://rsoumre.github.io/fleche/fichiers/</loc>
-         <lastmod>2026-05-07</lastmod>
+         <lastmod>2026-05-02</lastmod>
     </url>
     <url>
          <loc>https://rsoumre.github.io/fleche/middlewares/</loc>
-         <lastmod>2026-05-07</lastmod>
-    </url>
-    <url>
-         <loc>https://rsoumre.github.io/fleche/reponse/</loc>
-         <lastmod>2026-05-07</lastmod>
+         <lastmod>2026-05-02</lastmod>
     </url>
     <url>
          <loc>https://rsoumre.github.io/fleche/routeur/</loc>
-         <lastmod>2026-05-07</lastmod>
+         <lastmod>2026-05-02</lastmod>
     </url>
     <url>
          <loc>https://rsoumre.github.io/fleche/sessions/</loc>
-         <lastmod>2026-05-07</lastmod>
+         <lastmod>2026-05-02</lastmod>
     </url>
     <url>
          <loc>https://rsoumre.github.io/fleche/validation/</loc>
-         <lastmod>2026-05-07</lastmod>
+         <lastmod>2026-05-02</lastmod>
     </url>
     <url>
          <loc>https://rsoumre.github.io/fleche/vues/</loc>
-         <lastmod>2026-05-07</lastmod>
+         <lastmod>2026-05-02</lastmod>
     </url>
 </urlset>

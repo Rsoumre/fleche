@@ -22,21 +22,6 @@ class Routeur
         return $this->ajouter('POST', $uri, $action);
     }
 
-    public function put(string $uri, callable|array $action): Route
-    {
-        return $this->ajouter('PUT', $uri, $action);
-    }
-
-    public function patch(string $uri, callable|array $action): Route
-    {
-        return $this->ajouter('PATCH', $uri, $action);
-    }
-
-    public function delete(string $uri, callable|array $action): Route
-    {
-        return $this->ajouter('DELETE', $uri, $action);
-    }
-
     private function ajouter(string $methode, string $uri, callable|array $action): Route
     {
         $route = new Route($methode, $uri, $action);

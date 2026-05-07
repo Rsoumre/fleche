@@ -12,7 +12,7 @@ $app = new Application();
 
 $app->routeur->get('/', function () {
     return Reponse::vue('accueil', [
-        'titre'       => 'Karim Diallo',
+        'titre'       => 'Bienvenue sur Flèche !',
         'description' => 'Un framework PHP en français.',
     ]);
 });

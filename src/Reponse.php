@@ -38,11 +38,6 @@ class Reponse
         );
     }
 
-    public static function rediriger(string $url, int $statut = 302): self
-    {
-        return new self('', $statut, ['Location' => $url]);
-    }
-
     public function envoyer(): void
     {
         http_response_code($this->statut);

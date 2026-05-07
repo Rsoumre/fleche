@@ -7,8 +7,6 @@ class Requeteur
     private array $filtres  = [];
     private array $valeurs  = [];
     private ?int  $limite   = null;
-    private ?int  $decalage = null;
-    private ?string $ordre  = null;
 
     public function __construct(
         private \PDO $pdo,
@@ -28,33 +26,12 @@ class Requeteur
         return $this;
     }
 
-    public function decaler(int $nombre): static
-    {
-        $this->decalage = $nombre;
-        return $this;
-    }
-
-    public function ordonner(string $colonne, string $direction = 'ASC'): static
-    {
-        $direction    = strtoupper($direction) === 'DESC' ? 'DESC' : 'ASC';
-        $this->ordre  = "{$colonne} {$direction}";
-        return $this;
-    }
-
     public function tout(): array
     {
         $sql = "SELECT * FROM {$this->table}" . $this->construireConditions();
 
-        if ($this->ordre !== null) {
-            $sql .= " ORDER BY {$this->ordre}";
-        }
-
         if ($this->limite !== null) {
             $sql .= " LIMIT {$this->limite}";
-        }
-
-        if ($this->decalage !== null) {
-            $sql .= " OFFSET {$this->decalage}";
         }
 
         $stmt = $this->pdo->prepare($sql);

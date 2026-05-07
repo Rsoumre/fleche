@@ -36,16 +36,6 @@ $resultat = DB::table('articles')
 // Limiter le nombre de résultats
 $recents = DB::table('articles')->limiter(5)->tout();
 
-// Ordonner
-$articles = DB::table('articles')->ordonner('created_at', 'DESC')->tout();
-
-// Pagination
-$page2 = DB::table('articles')
-    ->ordonner('titre')
-    ->limiter(10)
-    ->decaler(10)
-    ->tout();
-
 // Compter
 $nombre = DB::table('articles')->compter();
 ```
