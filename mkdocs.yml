@@ -6,19 +6,22 @@ site_author: Rsoumre
 repo_name: Rsoumre/fleche
 repo_url: https://github.com/Rsoumre/fleche
 
+extra_css:
+  - css/extra.css
+
 theme:
   name: material
   language: fr
   palette:
     - scheme: default
-      primary: red
-      accent: deep orange
+      primary: black
+      accent: black
       toggle:
         icon: material/brightness-7
         name: Mode sombre
     - scheme: slate
-      primary: red
-      accent: deep orange
+      primary: black
+      accent: black
       toggle:
         icon: material/brightness-4
         name: Mode clair
@@ -35,10 +38,12 @@ nav:
     - Routeur: routeur.md
     - Contrôleurs: controleurs.md
     - Vues: vues.md
+    - Réponse: reponse.md
     - Middlewares: middlewares.md
     - Sessions: sessions.md
     - Validation: validation.md
     - Base de données: base-de-donnees.md
+    - Upload de fichiers: fichiers.md
     - Variables d'environnement: env.md
 
 markdown_extensions:
