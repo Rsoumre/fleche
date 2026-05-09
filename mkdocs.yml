@@ -6,6 +6,9 @@ site_author: Rsoumre
 repo_name: Rsoumre/fleche
 repo_url: https://github.com/Rsoumre/fleche
 
+extra_css:
+  - css/extra.css
+
 theme:
   name: material
   language: fr
