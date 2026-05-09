@@ -10,18 +10,9 @@ theme:
   name: material
   language: fr
   palette:
-    - scheme: default
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-7
-        name: Mode sombre
-    - scheme: slate
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-4
-        name: Mode clair
+    scheme: slate
+    primary: black
+    accent: cyan
   font:
     text: Inter
     code: JetBrains Mono
