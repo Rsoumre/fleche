@@ -6,16 +6,22 @@ site_author: Rsoumre
 repo_name: Rsoumre/fleche
 repo_url: https://github.com/Rsoumre/fleche
 
-extra_css:
-  - css/extra.css
-
 theme:
   name: material
   language: fr
   palette:
-    scheme: slate
-    primary: black
-    accent: cyan
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Mode sombre
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Mode clair
   font:
     text: Inter
     code: JetBrains Mono
@@ -25,6 +31,7 @@ theme:
     - navigation.top
     - navigation.instant
     - search.highlight
+    - search.suggest
     - content.code.copy
     - toc.follow
 
