@@ -114,8 +114,10 @@ body {
   pointer-events: none !important;
 }
 
-/* Masquer le titre de page en doublon dans la sous-nav (ex: "Routeur" × 2) */
-.md-nav__item--nested > .md-nav > .md-nav__title {
+/* Masquer tous les titres en doublon dans la sidebar */
+.md-nav__item--nested > .md-nav > .md-nav__title,
+.md-nav__item--active  > .md-nav > .md-nav__title,
+.md-sidebar--primary .md-nav .md-nav__title:not(.md-nav--primary > .md-nav__title) {
   display: none !important;
 }
 
