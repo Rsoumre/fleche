@@ -101,7 +101,7 @@ body {
   padding: 24px 0 !important;
 }
 
-/* Titre de section */
+/* Titre de section (étiquette "GUIDE" etc.) */
 .md-nav--primary > .md-nav__title,
 .md-nav__item--section > .md-nav__link {
   font-size: 0.68rem !important;
@@ -112,6 +112,11 @@ body {
   padding: 20px 20px 6px !important;
   cursor: default !important;
   pointer-events: none !important;
+}
+
+/* Masquer le titre de page en doublon dans la sous-nav (ex: "Routeur" × 2) */
+.md-nav__item--nested > .md-nav > .md-nav__title {
+  display: none !important;
 }
 
 /* Items nav */
