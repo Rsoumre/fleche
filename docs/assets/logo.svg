@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b" />
+      <stop offset="100%" style="stop-color:#c0392b" />
+    </linearGradient>
+    <linearGradient id="fond" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#222" />
+      <stop offset="100%" style="stop-color:#0f0f0f" />
+    </linearGradient>
+    <linearGradient id="fleche" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#ff6b6b;stop-opacity:0.8" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Fond -->
+  <rect width="100" height="100" rx="20" fill="url(#fond)"/>
+
+  <!-- Bordure subtile -->
+  <rect width="100" height="100" rx="20" fill="none" stroke="#e74c3c" stroke-width="1" opacity="0.3"/>
+
+  <!-- Barre de vitesse en bas (style flèche) -->
+  <rect x="12" y="74" width="50" height="2.5" rx="2" fill="url(#fleche)"/>
+  <rect x="12" y="80" width="35" height="2.5" rx="2" fill="url(#fleche)" opacity="0.5"/>
+
+  <!-- Lettres FL avec lueur -->
+  <text
+    x="50"
+    y="65"
+    text-anchor="middle"
+    font-family="system-ui, -apple-system, sans-serif"
+    font-weight="900"
+    font-size="50"
+    fill="url(#grad)"
+    filter="url(#glow)"
+    letter-spacing="-4"
+  >FL</text>
+</svg>

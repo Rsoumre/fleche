@@ -9,29 +9,41 @@ repo_url: https://github.com/Rsoumre/fleche
 extra_css:
   - css/extra.css
 
+extra_javascript:
+  - js/extra.js
+
 theme:
   name: material
   language: fr
+  custom_dir: overrides
   palette:
     scheme: slate
     primary: black
-    accent: cyan
+    accent: deep purple
   font:
     text: Inter
     code: JetBrains Mono
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
   features:
-    - navigation.tabs
-    - navigation.sections
-    - navigation.top
     - navigation.instant
+    - navigation.instant.progress
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
     - search.highlight
     - search.suggest
+    - search.share
     - content.code.copy
+    - content.code.annotate
     - toc.follow
 
 nav:
   - Accueil: index.md
   - Guide:
+    - Démarrage rapide: guide/index.md
     - Routeur: routeur.md
     - Contrôleurs: controleurs.md
     - Vues: vues.md
@@ -50,12 +62,18 @@ nav:
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.inlinehilite
+  - pymdownx.snippets
   - admonition
   - pymdownx.details
   - tables
+  - attr_list
+  - md_in_html
   - toc:
       permalink: true
+      title: Sur cette page

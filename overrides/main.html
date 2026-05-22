@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if page.file.src_path == "index.md" %}
+
+<div class="fl-hero">
+  <div class="fl-hero__badge">
+    <span class="fl-badge-dot"></span>
+    Framework PHP · Open Source · Entièrement en français
+  </div>
+
+  <h1 class="fl-hero__title">
+    Le framework PHP<br>
+    <span class="fl-gradient-text">pensé en français</span>
+  </h1>
+
+  <p class="fl-hero__desc">
+    Flèche est un framework PHP moderne avec une API 100&nbsp;% en français.
+    Routeur, ORM, validation, sessions, CSRF, pagination — tout ce qu'il faut pour construire des applications robustes.
+  </p>
+
+  <div class="fl-hero__actions">
+    <a href="guide/" class="fl-btn fl-btn--primary">
+      Commencer
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <a href="https://github.com/Rsoumre/fleche" target="_blank" class="fl-btn fl-btn--ghost">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+      GitHub
+    </a>
+  </div>
+
+  <div class="fl-install">
+    <span class="fl-install__prompt">$</span>
+    <span class="fl-install__cmd">composer require <strong>rsoumre/fleche</strong></span>
+    <button class="fl-install__copy" onclick="copyInstall(this)" title="Copier">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+    </button>
+  </div>
+</div>
+
+<div class="fl-stats">
+  <div class="fl-stat">
+    <div class="fl-stat__num">PHP 8+</div>
+    <div class="fl-stat__label">Compatibilité</div>
+  </div>
+  <div class="fl-stat">
+    <div class="fl-stat__num">100%</div>
+    <div class="fl-stat__label">En français</div>
+  </div>
+  <div class="fl-stat">
+    <div class="fl-stat__num">0</div>
+    <div class="fl-stat__label">Dépendances</div>
+  </div>
+  <div class="fl-stat">
+    <div class="fl-stat__num">MIT</div>
+    <div class="fl-stat__label">Licence</div>
+  </div>
+</div>
+
+<div class="fl-section">
+  <div class="fl-section__label">Fonctionnalités</div>
+  <h2 class="fl-section__title">Tout ce dont vous avez besoin</h2>
+  <p class="fl-section__desc">Un framework complet sans la complexité inutile.</p>
+
+  <div class="fl-cards">
+    <a href="routeur/" class="fl-card">
+      <div class="fl-card__icon">🗺️</div>
+      <h3>Routeur</h3>
+      <p>GET, POST, PUT, PATCH, DELETE. Groupes, middlewares, routes nommées, paramètres dynamiques.</p>
+      <span class="fl-card__link">Voir la doc →</span>
+    </a>
+    <a href="base-de-donnees/" class="fl-card">
+      <div class="fl-card__icon">🗄️</div>
+      <h3>Base de données</h3>
+      <p>Requêteur fluide avec jointures, filtres, tri, pagination et transactions sécurisées.</p>
+      <span class="fl-card__link">Voir la doc →</span>
+    </a>
+    <a href="modele/" class="fl-card">
+      <div class="fl-card__icon">📦</div>
+      <h3>Modèle ORM</h3>
+      <p>Active Record avec trouver, créer, sauvegarder, supprimer et pagination intégrée.</p>
+      <span class="fl-card__link">Voir la doc →</span>
+    </a>
+    <a href="validation/" class="fl-card">
+      <div class="fl-card__icon">✅</div>
+      <h3>Validation</h3>
+      <p>requis, email, unique, min, max, regex, confirme, nullable et bien d'autres règles.</p>
+      <span class="fl-card__link">Voir la doc →</span>
+    </a>
+    <a href="vues/" class="fl-card">
+      <div class="fl-card__icon">🎨</div>
+      <h3>Vues</h3>
+      <p>Templates PHP avec héritage de gabarit — etendre, section, ceder, inclure.</p>
+      <span class="fl-card__link">Voir la doc →</span>
+    </a>
+    <a href="securite/" class="fl-card">
+      <div class="fl-card__icon">🔐</div>
+      <h3>Sécurité</h3>
+      <p>Protection CSRF, hachage bcrypt et helpers pour échapper le HTML.</p>
+      <span class="fl-card__link">Voir la doc →</span>
+    </a>
+  </div>
+</div>
+
+<div class="fl-code-section">
+  <div class="fl-section__label">Exemple</div>
+  <h2 class="fl-section__title">Simple par conception</h2>
+  <p class="fl-section__desc">Une API expressive qui se lit comme du français naturel.</p>
+
+  <div class="fl-code-window">
+    <div class="fl-code-window__bar">
+      <span class="fl-dot fl-dot--r"></span>
+      <span class="fl-dot fl-dot--y"></span>
+      <span class="fl-dot fl-dot--g"></span>
+      <span class="fl-code-window__name">public/index.php</span>
+    </div>
+    <pre><code><span class="fl-cm">// Démarrer l'application</span>
+<span class="fl-kw">$app</span> = <span class="fl-fn">new</span> <span class="fl-cls">Application</span>();
+
+<span class="fl-cm">// Routes avec groupes et middlewares</span>
+<span class="fl-kw">$app</span>->routeur-><span class="fl-fn">groupe</span>([
+    <span class="fl-str">'prefixe'</span>     => <span class="fl-str">'/admin'</span>,
+    <span class="fl-str">'middlewares'</span> => [<span class="fl-cls">AuthMiddleware</span>::class],
+], <span class="fl-fn">function</span> (<span class="fl-kw">$r</span>) {
+    <span class="fl-kw">$r</span>-><span class="fl-fn">get</span>(<span class="fl-str">'/tableau'</span>, [<span class="fl-cls">AdminControleur</span>::class, <span class="fl-str">'tableau'</span>]);
+    <span class="fl-kw">$r</span>-><span class="fl-fn">delete</span>(<span class="fl-str">'/articles/{id}'</span>, [<span class="fl-cls">AdminControleur</span>::class, <span class="fl-str">'supprimer'</span>]);
+});
+
+<span class="fl-cm">// Validation + ORM en une fois</span>
+<span class="fl-kw">$req</span>-><span class="fl-fn">valider</span>([
+    <span class="fl-str">'email'</span>        => <span class="fl-str">'requis|email|unique:utilisateurs'</span>,
+    <span class="fl-str">'mot_de_passe'</span> => <span class="fl-str">'requis|min:8|confirme'</span>,
+]);
+
+<span class="fl-cls">Article</span>::<span class="fl-fn">paginer</span>(<span class="fl-kw">$page</span>, <span class="fl-num">15</span>); <span class="fl-cm">// → Paginateur</span>
+
+<span class="fl-kw">$app</span>-><span class="fl-fn">demarrer</span>();</code></pre>
+  </div>
+</div>
+
+<script>
+function copyInstall(btn) {
+  navigator.clipboard.writeText('composer require rsoumre/fleche').then(() => {
+    btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>';
+    btn.style.color = '#86efac';
+    setTimeout(() => {
+      btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+      btn.style.color = '';
+    }, 2000);
+  });
+}
+</script>
+
+{% else %}
+  {{ super() }}
+{% endif %}
+{% endblock %}
