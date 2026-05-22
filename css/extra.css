@@ -1,0 +1,78 @@
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #0d1117;
+  --md-default-fg-color: #e6edf3;
+  --md-default-fg-color--light: #8b949e;
+  --md-code-bg-color: #161b22;
+  --md-typeset-a-color: #58a6ff;
+  --md-accent-fg-color: #58a6ff;
+}
+
+/* Header et sidebar */
+.md-header { background: #010409 !important; }
+.md-tabs   { background: #010409 !important; border-bottom: 1px solid #21262d; }
+.md-sidebar { background: #010409 !important; }
+
+/* Titres */
+.md-typeset h1 {
+  color: #f0f6fc;
+  font-weight: 800;
+  border-bottom: 1px solid #21262d;
+  padding-bottom: 0.5rem;
+}
+.md-typeset h2 {
+  color: #f0f6fc;
+  font-weight: 700;
+  border-bottom: 1px solid #21262d;
+  padding-bottom: 0.3rem;
+  margin-top: 2.5rem;
+}
+.md-typeset h3 { color: #cdd9e5; font-weight: 600; }
+
+/* Texte */
+.md-typeset p, .md-typeset li { color: #adbac7; }
+.md-typeset strong { color: #e6edf3; }
+
+/* Liens */
+.md-typeset a { color: #58a6ff !important; }
+.md-typeset a:hover { color: #79b8ff !important; text-decoration: underline; }
+
+/* Code inline */
+.md-typeset code:not(pre > code) {
+  background: #1c2128;
+  color: #79b8ff;
+  border: 1px solid #30363d;
+  border-radius: 5px;
+  padding: 2px 7px;
+  font-size: 0.875em;
+}
+
+/* Blocs de code */
+.md-typeset pre {
+  border: 1px solid #30363d;
+  border-radius: 10px;
+}
+
+/* Tableaux */
+.md-typeset table { border: 1px solid #21262d; border-radius: 8px; overflow: hidden; }
+.md-typeset table th { background: #161b22 !important; color: #cdd9e5 !important; border-bottom: 2px solid #30363d !important; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.md-typeset table td { color: #adbac7; border-bottom: 1px solid #21262d !important; }
+.md-typeset table tr:hover td { background: rgba(255,255,255,0.02) !important; }
+
+/* HR */
+.md-typeset hr { border-color: #21262d; }
+
+/* Blockquote */
+.md-typeset blockquote {
+  border-left: 3px solid #58a6ff;
+  background: #1c2128;
+  border-radius: 0 8px 8px 0;
+  color: #adbac7;
+}
+
+/* Nav sidebar liens */
+.md-nav__link { color: #8b949e !important; }
+.md-nav__link:hover { color: #e6edf3 !important; }
+.md-nav__link--active { color: #58a6ff !important; font-weight: 600 !important; }
+
+/* Footer */
+.md-footer { background: #010409 !important; border-top: 1px solid #21262d; }

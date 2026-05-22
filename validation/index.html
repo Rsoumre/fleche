@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Framework PHP léger avec une API entièrement en français">
+        <meta name="description" content="Framework PHP moderne avec une API entièrement en français">
       
       
         <meta name="author" content="Rsoumre">
@@ -50,10 +50,12 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../css/extra.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -66,12 +68,10 @@
   
     
     
-      
     
     
     
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="deep-orange">
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -122,33 +122,7 @@
     </div>
     
       
-        <form class="md-header__option" data-md-component="palette">
-  
     
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="deep-orange"  aria-label="Mode sombre"  type="radio" name="__palette" id="__palette_0">
-    
-      <label class="md-header__button md-icon" title="Mode sombre" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="deep-orange"  aria-label="Mode clair"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="Mode clair" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
-      </label>
-    
-  
-</form>
-      
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -176,6 +150,8 @@
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
       
     </form>
     <div class="md-search__output">
@@ -480,6 +456,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../reponse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Réponse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../middlewares/" class="md-nav__link">
         
   
@@ -596,10 +600,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#utilisation" class="md-nav__link">
+  <a href="#utilisation-de-base" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Utilisation
+        Utilisation de base
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilisation-directe-du-validateur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utilisation directe du Validateur
       
     </span>
   </a>
@@ -618,10 +633,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exemple-de-reponse-derreur" class="md-nav__link">
+  <a href="#regle-nullable" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Exemple de réponse d'erreur
+        Règle nullable
       
     </span>
   </a>
@@ -629,10 +644,54 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#combiner-plusieurs-regles" class="md-nav__link">
+  <a href="#regle-confirme" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Combiner plusieurs règles
+        Règle confirme
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regle-unique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Règle unique
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-des-erreurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format des erreurs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemple-complet-inscription" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple complet — Inscription
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-validateur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Référence — Validateur
       
     </span>
   </a>
@@ -663,6 +722,146 @@
     
   
     Base de données
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modele/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modèle ORM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pagination/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pagination
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../securite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sécurité
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../journalisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Journalisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fichiers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upload de fichiers
   
 
     
@@ -738,10 +937,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#utilisation" class="md-nav__link">
+  <a href="#utilisation-de-base" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Utilisation
+        Utilisation de base
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilisation-directe-du-validateur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utilisation directe du Validateur
       
     </span>
   </a>
@@ -760,10 +970,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exemple-de-reponse-derreur" class="md-nav__link">
+  <a href="#regle-nullable" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Exemple de réponse d'erreur
+        Règle nullable
       
     </span>
   </a>
@@ -771,10 +981,54 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#combiner-plusieurs-regles" class="md-nav__link">
+  <a href="#regle-confirme" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Combiner plusieurs règles
+        Règle confirme
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regle-unique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Règle unique
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-des-erreurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format des erreurs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemple-complet-inscription" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple complet — Inscription
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-validateur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Référence — Validateur
       
     </span>
   </a>
@@ -801,71 +1055,231 @@
   
 
 
-<h1 id="validation">Validation</h1>
-<p>Flèche permet de valider les données envoyées par l'utilisateur.</p>
-<h2 id="utilisation">Utilisation</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="x">$erreurs = $req-&gt;valider([</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="x">    &#39;nom&#39;    =&gt; &#39;requis|chaine|max:100&#39;,</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="x">    &#39;email&#39;  =&gt; &#39;requis|email&#39;,</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="x">    &#39;age&#39;    =&gt; &#39;requis|entier&#39;,</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="x">]);</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="x">if (!empty($erreurs)) {</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="x">    return Reponse::json([&#39;erreurs&#39; =&gt; $erreurs], 422);</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="x">}</span>
+<h1 id="validation">Validation<a class="headerlink" href="#validation" title="Permanent link">&para;</a></h1>
+<p>Flèche permet de valider les données d'une requête avant de les traiter.</p>
+<hr />
+<h2 id="utilisation-de-base">Utilisation de base<a class="headerlink" href="#utilisation-de-base" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="x">// Lève une exception si la validation échoue</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="x">$req-&gt;valider([</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="x">    &#39;nom&#39;          =&gt; &#39;requis|chaine|max:100&#39;,</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="x">    &#39;email&#39;        =&gt; &#39;requis|email|unique:utilisateurs,email&#39;,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="x">    &#39;mot_de_passe&#39; =&gt; &#39;requis|min:8|confirme&#39;,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="x">    &#39;age&#39;          =&gt; &#39;nullable|entier|min_val:18&#39;,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="x">]);</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="x">// Sans exception — vérifier manuellement</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="x">$validateur = $req-&gt;validerSans([</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="x">    &#39;email&#39; =&gt; &#39;requis|email&#39;,</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="x">]);</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="x">if ($validateur-&gt;echoue()) {</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="x">    return Reponse::json([&#39;erreurs&#39; =&gt; $validateur-&gt;erreurs()], 422);</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="x">}</span>
 </code></pre></div>
-<h2 id="regles-disponibles">Règles disponibles</h2>
+<hr />
+<h2 id="utilisation-directe-du-validateur">Utilisation directe du Validateur<a class="headerlink" href="#utilisation-directe-du-validateur" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="x">use Fleche\Validateur;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="x">$validateur = Validateur::verifier($donnees, [</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="x">    &#39;titre&#39;   =&gt; &#39;requis|chaine|max:200&#39;,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="x">    &#39;contenu&#39; =&gt; &#39;requis|chaine&#39;,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="x">]);</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="x">if ($validateur-&gt;echoue()) {</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="x">    $toutesLesErreurs = $validateur-&gt;erreurs();</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="x">    $premiereErreur   = $validateur-&gt;premiere(&#39;titre&#39;);</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="x">}</span>
+</code></pre></div>
+<hr />
+<h2 id="regles-disponibles">Règles disponibles<a class="headerlink" href="#regles-disponibles" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
 <th>Règle</th>
 <th>Description</th>
+<th>Exemple</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>requis</code></td>
 <td>Le champ ne peut pas être vide</td>
+<td><code>requis</code></td>
+</tr>
+<tr>
+<td><code>nullable</code></td>
+<td>Ignorer les autres règles si le champ est vide</td>
+<td><code>nullable\|email</code></td>
 </tr>
 <tr>
 <td><code>chaine</code></td>
 <td>Doit être du texte</td>
+<td><code>chaine</code></td>
 </tr>
 <tr>
 <td><code>entier</code></td>
 <td>Doit être un nombre entier</td>
+<td><code>entier</code></td>
 </tr>
 <tr>
 <td><code>numerique</code></td>
 <td>Doit être un nombre (entier ou décimal)</td>
+<td><code>numerique</code></td>
+</tr>
+<tr>
+<td><code>booleen</code></td>
+<td>Doit être un booléen (<code>true/false/0/1</code>)</td>
+<td><code>booleen</code></td>
 </tr>
 <tr>
 <td><code>email</code></td>
 <td>Doit être une adresse email valide</td>
+<td><code>email</code></td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td>Doit être une URL valide</td>
+<td><code>url</code></td>
 </tr>
 <tr>
 <td><code>min:X</code></td>
-<td>Doit contenir au minimum X caractères</td>
+<td>Minimum X <strong>caractères</strong></td>
+<td><code>min:8</code></td>
 </tr>
 <tr>
 <td><code>max:X</code></td>
-<td>Ne doit pas dépasser X caractères</td>
+<td>Maximum X <strong>caractères</strong></td>
+<td><code>max:200</code></td>
+</tr>
+<tr>
+<td><code>min_val:X</code></td>
+<td>Valeur numérique ≥ X</td>
+<td><code>min_val:18</code></td>
+</tr>
+<tr>
+<td><code>max_val:X</code></td>
+<td>Valeur numérique ≤ X</td>
+<td><code>max_val:120</code></td>
+</tr>
+<tr>
+<td><code>regex:motif</code></td>
+<td>Doit correspondre à l'expression régulière</td>
+<td><code>regex:/^[a-z]+$/</code></td>
+</tr>
+<tr>
+<td><code>dans:a,b,c</code></td>
+<td>La valeur doit être dans la liste</td>
+<td><code>dans:admin,editeur,lecteur</code></td>
+</tr>
+<tr>
+<td><code>confirme</code></td>
+<td>Doit correspondre au champ <code>{champ}_confirmation</code></td>
+<td><code>confirme</code></td>
+</tr>
+<tr>
+<td><code>unique:table,col</code></td>
+<td>La valeur ne doit pas déjà exister en base</td>
+<td><code>unique:utilisateurs,email</code></td>
 </tr>
 </tbody>
 </table>
-<h2 id="exemple-de-reponse-derreur">Exemple de réponse d'erreur</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&quot;erreurs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="nt">&quot;nom&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Le champ nom est obligatoire.&quot;</span><span class="p">],</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Le champ email doit être une adresse email valide.&quot;</span><span class="p">]</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">}</span>
-</code></pre></div>
-<h2 id="combiner-plusieurs-regles">Combiner plusieurs règles</h2>
+<hr />
+<h2 id="regle-nullable">Règle <code>nullable</code><a class="headerlink" href="#regle-nullable" title="Permanent link">&para;</a></h2>
+<p>Permet qu'un champ soit absent ou vide — les autres règles sont ignorées dans ce cas.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="x">$req-&gt;valider([</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="x">    &#39;mot_de_passe&#39; =&gt; &#39;requis|chaine|min:8|max:100&#39;,</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="x">]);</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="x">    &#39;site_web&#39;  =&gt; &#39;nullable|url&#39;,           // optionnel mais doit être une URL si présent</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="x">    &#39;telephone&#39; =&gt; &#39;nullable|chaine|max:20&#39;, // optionnel</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="x">]);</span>
 </code></pre></div>
+<hr />
+<h2 id="regle-confirme">Règle <code>confirme</code><a class="headerlink" href="#regle-confirme" title="Permanent link">&para;</a></h2>
+<p>Le champ <code>{nom}_confirmation</code> doit exister et avoir la même valeur.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="x">$req-&gt;valider([</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="x">    &#39;mot_de_passe&#39; =&gt; &#39;requis|min:8|confirme&#39;,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="x">]);</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;mot_de_passe&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;mot_de_passe_confirmation&quot;</span><span class="p">&gt;</span>
+</code></pre></div>
+<hr />
+<h2 id="regle-unique">Règle <code>unique</code><a class="headerlink" href="#regle-unique" title="Permanent link">&para;</a></h2>
+<p>Vérifie que la valeur n'existe pas déjà dans la base de données.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="x">$req-&gt;valider([</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="x">    &#39;email&#39;  =&gt; &#39;requis|email|unique:utilisateurs,email&#39;,</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="x">    &#39;pseudo&#39; =&gt; &#39;requis|unique:utilisateurs&#39;, // colonne = nom du champ par défaut</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="x">]);</span>
+</code></pre></div>
+<hr />
+<h2 id="format-des-erreurs">Format des erreurs<a class="headerlink" href="#format-des-erreurs" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nt">&quot;erreurs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">        </span><span class="nt">&quot;nom&quot;</span><span class="p">:</span><span class="w">          </span><span class="p">[</span><span class="s2">&quot;Le champ nom est obligatoire.&quot;</span><span class="p">],</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">        </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w">        </span><span class="p">[</span><span class="s2">&quot;Le champ email doit être une adresse email valide.&quot;</span><span class="p">],</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">        </span><span class="nt">&quot;mot_de_passe&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Le champ mot_de_passe doit contenir au minimum 8 caractères.&quot;</span><span class="p">]</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="exemple-complet-inscription">Exemple complet — Inscription<a class="headerlink" href="#exemple-complet-inscription" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="x">public function inscrire(Requete $req): Reponse</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="x">{</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="x">    $validateur = $req-&gt;validerSans([</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="x">        &#39;nom&#39;                      =&gt; &#39;requis|chaine|max:100&#39;,</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="x">        &#39;email&#39;                    =&gt; &#39;requis|email|unique:utilisateurs,email&#39;,</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="x">        &#39;mot_de_passe&#39;             =&gt; &#39;requis|min:8|confirme&#39;,</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="x">        &#39;role&#39;                     =&gt; &#39;nullable|dans:admin,editeur,lecteur&#39;,</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="x">    ]);</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="x">    if ($validateur-&gt;echoue()) {</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="x">        return Reponse::json([&#39;erreurs&#39; =&gt; $validateur-&gt;erreurs()], 422);</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="x">    }</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="x">    $id = DB::table(&#39;utilisateurs&#39;)-&gt;inserer([</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="x">        &#39;nom&#39;          =&gt; $req-&gt;entree(&#39;nom&#39;),</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="x">        &#39;email&#39;        =&gt; $req-&gt;entree(&#39;email&#39;),</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="x">        &#39;mot_de_passe&#39; =&gt; Hachage::creer($req-&gt;entree(&#39;mot_de_passe&#39;)),</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="x">        &#39;role&#39;         =&gt; $req-&gt;entree(&#39;role&#39;, &#39;lecteur&#39;),</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="x">    ]);</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="x">    return Reponse::json([&#39;id&#39; =&gt; $id], 201);</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="x">}</span>
+</code></pre></div>
+<hr />
+<h2 id="reference-validateur">Référence — Validateur<a class="headerlink" href="#reference-validateur" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Méthode</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Validateur::verifier($donnees, $regles)</code></td>
+<td>Créer et valider en une fois</td>
+</tr>
+<tr>
+<td><code>-&gt;valider()</code></td>
+<td>Lancer la validation — retourne le tableau d'erreurs</td>
+</tr>
+<tr>
+<td><code>-&gt;echoue()</code></td>
+<td><code>true</code> si des erreurs existent</td>
+</tr>
+<tr>
+<td><code>-&gt;reussi()</code></td>
+<td><code>true</code> si aucune erreur</td>
+</tr>
+<tr>
+<td><code>-&gt;erreurs()</code></td>
+<td>Tableau complet des erreurs</td>
+</tr>
+<tr>
+<td><code>-&gt;premiere($champ)</code></td>
+<td>Première erreur d'un champ</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -921,7 +1335,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.instant", "search.highlight", "search.suggest", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
