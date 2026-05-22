@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Framework PHP léger avec une API entièrement en français">
+        <meta name="description" content="Framework PHP moderne avec une API entièrement en français">
       
       
         <meta name="author" content="Rsoumre">
@@ -18,7 +18,7 @@
         <link rel="prev" href="../validation/">
       
       
-        <link rel="next" href="../env/">
+        <link rel="next" href="../modele/">
       
       
         
@@ -50,10 +50,12 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../css/extra.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -66,12 +68,10 @@
   
     
     
-      
     
     
     
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="deep-orange">
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -122,33 +122,7 @@
     </div>
     
       
-        <form class="md-header__option" data-md-component="palette">
-  
     
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="deep-orange"  aria-label="Mode sombre"  type="radio" name="__palette" id="__palette_0">
-    
-      <label class="md-header__button md-icon" title="Mode sombre" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="deep-orange"  aria-label="Mode clair"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="Mode clair" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
-      </label>
-    
-  
-</form>
-      
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -176,6 +150,8 @@
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
       
     </form>
     <div class="md-search__output">
@@ -480,6 +456,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../reponse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Réponse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../middlewares/" class="md-nav__link">
         
   
@@ -646,6 +650,50 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#selectionner-des-colonnes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sélectionner des colonnes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trier-et-limiter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trier et limiter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jointures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jointures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pagination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pagination
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#inserer" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -678,10 +726,194 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transactions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requetes-sql-brutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requêtes SQL brutes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-requeteur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Référence — Requeteur
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Référence — DB
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modele/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modèle ORM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pagination/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pagination
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../securite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sécurité
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../journalisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Journalisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fichiers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upload de fichiers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -771,6 +1003,50 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#selectionner-des-colonnes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sélectionner des colonnes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trier-et-limiter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trier et limiter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jointures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jointures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pagination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pagination
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#inserer" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -803,6 +1079,50 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transactions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requetes-sql-brutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requêtes SQL brutes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-requeteur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Référence — Requeteur
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Référence — DB
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -823,55 +1143,267 @@
   
 
 
-<h1 id="base-de-donnees">Base de données</h1>
-<p>Flèche utilise PDO pour communiquer avec MySQL/MariaDB.</p>
-<h2 id="configuration">Configuration</h2>
-<p>Dans le fichier <code>.env</code> :</p>
+<h1 id="base-de-donnees">Base de données<a class="headerlink" href="#base-de-donnees" title="Permanent link">&para;</a></h1>
+<p>Flèche utilise PDO pour communiquer avec MySQL/MariaDB via une interface fluide en français.</p>
+<hr />
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>DB_HOTE=localhost
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>DB_PORT=3306
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>DB_NOM=ma_base
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>DB_UTILISATEUR=root
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>DB_MOT_DE_PASSE=secret
 </code></pre></div>
-<h2 id="lire-des-donnees">Lire des données</h2>
+<hr />
+<h2 id="lire-des-donnees">Lire des données<a class="headerlink" href="#lire-des-donnees" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="x">use Fleche\DB;</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="x">// Tous les enregistrements</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="x">$articles = DB::table(&#39;articles&#39;)-&gt;tout();</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="x">// Avec un filtre</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="x">$article = DB::table(&#39;articles&#39;)</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="x">    -&gt;filtrer(&#39;id&#39;, 1)</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="x">    -&gt;premier();</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="x">// Plusieurs filtres</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="x">$resultat = DB::table(&#39;articles&#39;)</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="x">    -&gt;filtrer(&#39;categorie&#39;, &#39;tech&#39;)</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="x">    -&gt;filtrer(&#39;publie&#39;, 1)</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="x">// Filtrer (AND)</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="x">$articles = DB::table(&#39;articles&#39;)</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="x">    -&gt;filtrer(&#39;categorie&#39;, &#39;tech&#39;)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="x">    -&gt;filtrer(&#39;publie&#39;, 1)</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="x">    -&gt;tout();</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="x">// Filtre avec opérateur</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="x">$recents = DB::table(&#39;articles&#39;)</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="x">    -&gt;filtrer(&#39;vues&#39;, 100, &#39;&gt;&#39;)</span>
 <a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="x">    -&gt;tout();</span>
 <a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="x">// Limiter le nombre de résultats</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="x">$recents = DB::table(&#39;articles&#39;)-&gt;limiter(5)-&gt;tout();</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="x">// Compter</span>
-<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="x">$nombre = DB::table(&#39;articles&#39;)-&gt;compter();</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="x">// Filtre OR</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="x">$resultats = DB::table(&#39;articles&#39;)</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="x">    -&gt;filtrer(&#39;titre&#39;, &#39;PHP&#39;)</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="x">    -&gt;ouFiltrer(&#39;titre&#39;, &#39;Symfony&#39;)</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="x">    -&gt;tout();</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="x">// Premier résultat</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="x">$article = DB::table(&#39;articles&#39;)-&gt;filtrer(&#39;id&#39;, 1)-&gt;premier();</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="x">// Trouver par ID</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="x">$article = DB::table(&#39;articles&#39;)-&gt;trouver(42);</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="x">// Compter</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="x">$total = DB::table(&#39;articles&#39;)-&gt;compter();</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="x">// Vérifier l&#39;existence</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="x">$existe = DB::table(&#39;articles&#39;)-&gt;filtrer(&#39;slug&#39;, &#39;mon-article&#39;)-&gt;existe();</span>
 </code></pre></div>
-<h2 id="inserer">Insérer</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="x">$id = DB::table(&#39;articles&#39;)-&gt;inserer([</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="x">    &#39;titre&#39;   =&gt; &#39;Mon article&#39;,</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="x">    &#39;contenu&#39; =&gt; &#39;Le contenu...&#39;,</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="x">]);</span>
+<hr />
+<h2 id="selectionner-des-colonnes">Sélectionner des colonnes<a class="headerlink" href="#selectionner-des-colonnes" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="x">$articles = DB::table(&#39;articles&#39;)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="x">    -&gt;select(&#39;id&#39;, &#39;titre&#39;, &#39;created_at&#39;)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="x">    -&gt;tout();</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="x">// Une seule valeur</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="x">$nom = DB::table(&#39;utilisateurs&#39;)</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="x">    -&gt;filtrer(&#39;id&#39;, 1)</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="x">    -&gt;valeur(&#39;nom&#39;);</span>
 </code></pre></div>
-<h2 id="modifier">Modifier</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="x">DB::table(&#39;articles&#39;)</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="x">    -&gt;filtrer(&#39;id&#39;, 1)</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="x">    -&gt;modifier([&#39;titre&#39; =&gt; &#39;Nouveau titre&#39;]);</span>
+<hr />
+<h2 id="trier-et-limiter">Trier et limiter<a class="headerlink" href="#trier-et-limiter" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="x">$recents = DB::table(&#39;articles&#39;)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="x">    -&gt;trier(&#39;created_at&#39;, &#39;DESC&#39;)</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="x">    -&gt;trier(&#39;titre&#39;, &#39;ASC&#39;)</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="x">    -&gt;limiter(10)</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="x">    -&gt;decaler(20)</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="x">    -&gt;tout();</span>
 </code></pre></div>
-<h2 id="supprimer">Supprimer</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="x">DB::table(&#39;articles&#39;)</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="x">    -&gt;filtrer(&#39;id&#39;, 1)</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="x">    -&gt;supprimer();</span>
+<hr />
+<h2 id="jointures">Jointures<a class="headerlink" href="#jointures" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="x">// INNER JOIN</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="x">$articles = DB::table(&#39;articles&#39;)</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="x">    -&gt;jointure(&#39;utilisateurs&#39;, &#39;articles.auteur_id = utilisateurs.id&#39;)</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="x">    -&gt;select(&#39;articles.titre&#39;, &#39;utilisateurs.nom&#39;)</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="x">    -&gt;tout();</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="x">// LEFT JOIN</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="x">$articles = DB::table(&#39;articles&#39;)</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="x">    -&gt;joinGauche(&#39;commentaires&#39;, &#39;articles.id = commentaires.article_id&#39;)</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="x">    -&gt;select(&#39;articles.titre&#39;, &#39;commentaires.contenu&#39;)</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="x">    -&gt;tout();</span>
 </code></pre></div>
+<hr />
+<h2 id="pagination">Pagination<a class="headerlink" href="#pagination" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="x">$page      = (int) ($req-&gt;obtenir(&#39;page&#39;, 1));</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="x">$paginator = DB::table(&#39;articles&#39;)</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="x">    -&gt;trier(&#39;created_at&#39;, &#39;DESC&#39;)</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="x">    -&gt;paginer($page, 15); // 15 résultats par page</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="x">$articles    = $paginator-&gt;items;</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="x">$total       = $paginator-&gt;total;</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="x">$totalPages  = $paginator-&gt;totalPages;</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="x">$aPrecedent  = $paginator-&gt;aPrecedent;</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="x">$aSuivant    = $paginator-&gt;aSuivant;</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="x">// Générer les liens HTML</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="x">echo $paginator-&gt;liens(&#39;/articles&#39;);</span>
+</code></pre></div>
+<hr />
+<h2 id="inserer">Insérer<a class="headerlink" href="#inserer" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="x">$id = DB::table(&#39;articles&#39;)-&gt;inserer([</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="x">    &#39;titre&#39;      =&gt; &#39;Mon article&#39;,</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="x">    &#39;contenu&#39;    =&gt; &#39;Le contenu...&#39;,</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="x">    &#39;created_at&#39; =&gt; date(&#39;Y-m-d H:i:s&#39;),</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="x">]);</span>
+</code></pre></div>
+<hr />
+<h2 id="modifier">Modifier<a class="headerlink" href="#modifier" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="x">DB::table(&#39;articles&#39;)</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="x">    -&gt;filtrer(&#39;id&#39;, 1)</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="x">    -&gt;modifier([</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="x">        &#39;titre&#39;      =&gt; &#39;Nouveau titre&#39;,</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="x">        &#39;updated_at&#39; =&gt; date(&#39;Y-m-d H:i:s&#39;),</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="x">    ]);</span>
+</code></pre></div>
+<hr />
+<h2 id="supprimer">Supprimer<a class="headerlink" href="#supprimer" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="x">DB::table(&#39;articles&#39;)-&gt;filtrer(&#39;id&#39;, 1)-&gt;supprimer();</span>
+</code></pre></div>
+<hr />
+<h2 id="transactions">Transactions<a class="headerlink" href="#transactions" title="Permanent link">&para;</a></h2>
+<p>Toute exception à l'intérieur du callback déclenche un rollback automatique.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="x">DB::transaction(function () {</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="x">    DB::table(&#39;commandes&#39;)-&gt;inserer([</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="x">        &#39;utilisateur_id&#39; =&gt; 1,</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="x">        &#39;total&#39;          =&gt; 99.90,</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="x">    ]);</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="x">    DB::table(&#39;stocks&#39;)</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="x">        -&gt;filtrer(&#39;produit_id&#39;, 5)</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="x">        -&gt;modifier([&#39;quantite&#39; =&gt; 10]);</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="x">});</span>
+</code></pre></div>
+<hr />
+<h2 id="requetes-sql-brutes">Requêtes SQL brutes<a class="headerlink" href="#requetes-sql-brutes" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="x">// SELECT brut — retourne un tableau</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="x">$resultats = DB::brut(</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="x">    &#39;SELECT * FROM articles WHERE vues &gt; ? AND publie = ?&#39;,</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="x">    [100, 1]</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="x">);</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="x">// INSERT / UPDATE / DELETE brut — retourne le nombre de lignes affectées</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="x">$lignes = DB::executer(</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="x">    &#39;UPDATE articles SET vues = vues + 1 WHERE id = ?&#39;,</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="x">    [$id]</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="x">);</span>
+</code></pre></div>
+<hr />
+<h2 id="reference-requeteur">Référence — Requeteur<a class="headerlink" href="#reference-requeteur" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Méthode</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>select(string ...$cols)</code></td>
+<td>Choisir les colonnes</td>
+</tr>
+<tr>
+<td><code>filtrer($col, $val, $op)</code></td>
+<td>Condition WHERE (AND)</td>
+</tr>
+<tr>
+<td><code>ouFiltrer($col, $val, $op)</code></td>
+<td>Condition WHERE (OR)</td>
+</tr>
+<tr>
+<td><code>jointure($table, $condition)</code></td>
+<td>INNER JOIN</td>
+</tr>
+<tr>
+<td><code>joinGauche($table, $condition)</code></td>
+<td>LEFT JOIN</td>
+</tr>
+<tr>
+<td><code>trier($col, $dir)</code></td>
+<td>ORDER BY</td>
+</tr>
+<tr>
+<td><code>limiter($n)</code></td>
+<td>LIMIT</td>
+</tr>
+<tr>
+<td><code>decaler($n)</code></td>
+<td>OFFSET</td>
+</tr>
+<tr>
+<td><code>tout()</code></td>
+<td>Retourner tous les résultats</td>
+</tr>
+<tr>
+<td><code>premier()</code></td>
+<td>Retourner le premier résultat</td>
+</tr>
+<tr>
+<td><code>trouver($id, $cle)</code></td>
+<td>Trouver par clé primaire</td>
+</tr>
+<tr>
+<td><code>compter()</code></td>
+<td>COUNT(*)</td>
+</tr>
+<tr>
+<td><code>existe()</code></td>
+<td>Vrai si au moins un résultat</td>
+</tr>
+<tr>
+<td><code>valeur($colonne)</code></td>
+<td>Lire une seule valeur</td>
+</tr>
+<tr>
+<td><code>paginer($page, $parPage)</code></td>
+<td>Retourner un <code>Paginateur</code></td>
+</tr>
+<tr>
+<td><code>inserer($donnees)</code></td>
+<td>INSERT — retourne l'ID</td>
+</tr>
+<tr>
+<td><code>modifier($donnees)</code></td>
+<td>UPDATE</td>
+</tr>
+<tr>
+<td><code>supprimer()</code></td>
+<td>DELETE</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="reference-db">Référence — DB<a class="headerlink" href="#reference-db" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Méthode</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DB::table($table)</code></td>
+<td>Créer un Requeteur pour une table</td>
+</tr>
+<tr>
+<td><code>DB::brut($sql, $valeurs)</code></td>
+<td>Requête SELECT brute</td>
+</tr>
+<tr>
+<td><code>DB::executer($sql, $valeurs)</code></td>
+<td>Requête INSERT/UPDATE/DELETE brute</td>
+</tr>
+<tr>
+<td><code>DB::transaction($callback)</code></td>
+<td>Exécuter dans une transaction</td>
+</tr>
+<tr>
+<td><code>DB::connecter()</code></td>
+<td>Obtenir la connexion PDO</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -927,7 +1459,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.instant", "search.highlight", "search.suggest", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Framework PHP léger avec une API entièrement en français">
+        <meta name="description" content="Framework PHP moderne avec une API entièrement en français">
       
       
         <meta name="author" content="Rsoumre">
@@ -18,7 +18,7 @@
         <link rel="prev" href="../controleurs/">
       
       
-        <link rel="next" href="../middlewares/">
+        <link rel="next" href="../reponse/">
       
       
         
@@ -50,10 +50,12 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../css/extra.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -66,12 +68,10 @@
   
     
     
-      
     
     
     
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="deep-orange">
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -122,33 +122,7 @@
     </div>
     
       
-        <form class="md-header__option" data-md-component="palette">
-  
     
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="deep-orange"  aria-label="Mode sombre"  type="radio" name="__palette" id="__palette_0">
-    
-      <label class="md-header__button md-icon" title="Mode sombre" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="deep-orange"  aria-label="Mode clair"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="Mode clair" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
-      </label>
-    
-  
-</form>
-      
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -176,6 +150,8 @@
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
       
     </form>
     <div class="md-search__output">
@@ -534,10 +510,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#creer-une-vue" class="md-nav__link">
+  <a href="#vue-simple" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Créer une vue
+        Vue simple
       
     </span>
   </a>
@@ -545,10 +521,82 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bonne-pratique" class="md-nav__link">
+  <a href="#heritage-de-gabarit-layout" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Bonne pratique
+        Héritage de gabarit (Layout)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Héritage de gabarit (Layout)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-creer-le-gabarit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Créer le gabarit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-creer-une-vue-qui-etend-le-gabarit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Créer une vue qui étend le gabarit
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inclure-un-partial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inclure un partial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#securite-echapper-les-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sécurité — Échapper les variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vue-404-personnalisee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vue 404 personnalisée
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-vue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Référence — Vue
       
     </span>
   </a>
@@ -559,6 +607,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reponse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Réponse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -683,6 +759,146 @@
   
   
     <li class="md-nav__item">
+      <a href="../modele/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modèle ORM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pagination/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pagination
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../securite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sécurité
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../journalisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Journalisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fichiers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upload de fichiers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../env/" class="md-nav__link">
         
   
@@ -760,10 +976,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#creer-une-vue" class="md-nav__link">
+  <a href="#vue-simple" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Créer une vue
+        Vue simple
       
     </span>
   </a>
@@ -771,10 +987,82 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bonne-pratique" class="md-nav__link">
+  <a href="#heritage-de-gabarit-layout" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Bonne pratique
+        Héritage de gabarit (Layout)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Héritage de gabarit (Layout)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-creer-le-gabarit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Créer le gabarit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-creer-une-vue-qui-etend-le-gabarit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Créer une vue qui étend le gabarit
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inclure-un-partial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inclure un partial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#securite-echapper-les-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sécurité — Échapper les variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vue-404-personnalisee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vue 404 personnalisée
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-vue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Référence — Vue
       
     </span>
   </a>
@@ -801,47 +1089,166 @@
   
 
 
-<h1 id="vues">Vues</h1>
-<p>Les vues sont des fichiers PHP qui affichent le HTML.</p>
-<h2 id="emplacement">Emplacement</h2>
-<p>Les vues se trouvent dans <code>src/vues/</code>. Chaque fichier porte l'extension <code>.php</code>.</p>
+<h1 id="vues">Vues<a class="headerlink" href="#vues" title="Permanent link">&para;</a></h1>
+<p>Les vues sont des fichiers PHP qui génèrent le HTML renvoyé au navigateur.</p>
+<hr />
+<h2 id="emplacement">Emplacement<a class="headerlink" href="#emplacement" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>src/vues/
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── accueil.php
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── articles/
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│   ├── liste.php
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   └── detail.php
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── layouts/           # Gabarits de page réutilisables
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│   └── app.php
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── partials/          # Morceaux réutilisables (nav, footer…)
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   ├── nav.php
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│   └── footer.php
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>├── articles/
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│   ├── liste.php
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│   └── detail.php
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>└── accueil.php
 </code></pre></div>
-<h2 id="retourner-une-vue">Retourner une vue</h2>
-<p>Depuis un contrôleur :</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="x">return $this-&gt;vue(&#39;accueil&#39;, [&#39;titre&#39; =&gt; &#39;Bonjour&#39;]);</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="x">// Sous-dossier</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="x">return $this-&gt;vue(&#39;articles/liste&#39;, [&#39;articles&#39; =&gt; $articles]);</span>
+<hr />
+<h2 id="retourner-une-vue">Retourner une vue<a class="headerlink" href="#retourner-une-vue" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="x">// Depuis un contrôleur</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="x">return $this-&gt;vue(&#39;accueil&#39;);</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="x">return $this-&gt;vue(&#39;articles.liste&#39;, [&#39;articles&#39; =&gt; $articles]);</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="x">return $this-&gt;vue(&#39;erreurs.404&#39;, [], 404);</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="x">// Directement</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="x">return Reponse::vue(&#39;accueil&#39;, [&#39;titre&#39; =&gt; &#39;Bonjour&#39;]);</span>
 </code></pre></div>
-<p>Ou directement :</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="x">return Reponse::vue(&#39;accueil&#39;, [&#39;titre&#39; =&gt; &#39;Bonjour&#39;]);</span>
+<div class="admonition tip">
+<p class="admonition-title">Notation point</p>
+<p>Utilisez le point pour les sous-dossiers : <code>articles.liste</code> → <code>articles/liste.php</code></p>
+</div>
+<hr />
+<h2 id="vue-simple">Vue simple<a class="headerlink" href="#vue-simple" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="x">&lt;!-- src/vues/articles/liste.php --&gt;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="x">&lt;!DOCTYPE html&gt;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="x">&lt;html lang=&quot;fr&quot;&gt;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="x">&lt;head&gt;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="x">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="x">    &lt;title&gt;Articles&lt;/title&gt;</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="x">&lt;/head&gt;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="x">&lt;body&gt;</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="x">    &lt;h1&gt;Articles&lt;/h1&gt;</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="x">    </span><span class="cp">&lt;?php</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$articles</span> <span class="k">as</span> <span class="nv">$article</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="x">        &lt;h2&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nx">e</span><span class="p">(</span><span class="nv">$article</span><span class="p">[</span><span class="s1">&#39;titre&#39;</span><span class="p">])</span> <span class="cp">?&gt;</span><span class="x">&lt;/h2&gt;</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="x">        &lt;p&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nx">e</span><span class="p">(</span><span class="nv">$article</span><span class="p">[</span><span class="s1">&#39;contenu&#39;</span><span class="p">])</span> <span class="cp">?&gt;</span><span class="x">&lt;/p&gt;</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="x">    </span><span class="cp">&lt;?php</span> <span class="k">endforeach</span><span class="p">;</span> <span class="cp">?&gt;</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="x">&lt;/body&gt;</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="x">&lt;/html&gt;</span>
 </code></pre></div>
-<h2 id="creer-une-vue">Créer une vue</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="x">&lt;!-- src/vues/accueil.php --&gt;</span>
+<hr />
+<h2 id="heritage-de-gabarit-layout">Héritage de gabarit (Layout)<a class="headerlink" href="#heritage-de-gabarit-layout" title="Permanent link">&para;</a></h2>
+<h3 id="1-creer-le-gabarit">1. Créer le gabarit<a class="headerlink" href="#1-creer-le-gabarit" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="x">&lt;!-- src/vues/layouts/app.php --&gt;</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="x">&lt;!DOCTYPE html&gt;</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="x">&lt;html lang=&quot;fr&quot;&gt;</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="x">&lt;head&gt;</span>
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="x">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="x">    &lt;title&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nv">$titre</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x">&lt;/title&gt;</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="x">&lt;/head&gt;</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="x">&lt;body&gt;</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="x">    &lt;h1&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nv">$titre</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x">&lt;/h1&gt;</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="x">&lt;/body&gt;</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="x">&lt;/html&gt;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="x">    &lt;title&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nx">Vue</span><span class="o">::</span><span class="na">ceder</span><span class="p">(</span><span class="s1">&#39;titre&#39;</span><span class="p">,</span> <span class="s1">&#39;Mon App&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x">&lt;/title&gt;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="x">    &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/app.css&quot;&gt;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="x">&lt;/head&gt;</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="x">&lt;body&gt;</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="x">    </span><span class="cp">&lt;?php</span> <span class="nx">Vue</span><span class="o">::</span><span class="na">inclure</span><span class="p">(</span><span class="s1">&#39;nav&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="x">    &lt;main&gt;</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="x">        </span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nx">Vue</span><span class="o">::</span><span class="na">ceder</span><span class="p">(</span><span class="s1">&#39;contenu&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="x">    &lt;/main&gt;</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="x">    </span><span class="cp">&lt;?php</span> <span class="nx">Vue</span><span class="o">::</span><span class="na">inclure</span><span class="p">(</span><span class="s1">&#39;footer&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="x">&lt;/body&gt;</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="x">&lt;/html&gt;</span>
 </code></pre></div>
-<h2 id="bonne-pratique">Bonne pratique</h2>
-<p>Toujours utiliser <code>htmlspecialchars()</code> pour afficher des variables et éviter les failles XSS :</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="x">// Bien</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="cp">&lt;?</span><span class="o">=</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nv">$nom</span><span class="p">)</span> <span class="cp">?&gt;</span>
+<h3 id="2-creer-une-vue-qui-etend-le-gabarit">2. Créer une vue qui étend le gabarit<a class="headerlink" href="#2-creer-une-vue-qui-etend-le-gabarit" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="x">&lt;!-- src/vues/articles/liste.php --&gt;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="cp">&lt;?php</span> <span class="nx">Vue</span><span class="o">::</span><span class="na">etendre</span><span class="p">(</span><span class="s1">&#39;app&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="x">// Dangereux</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$nom</span> <span class="cp">?&gt;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="cp">&lt;?php</span> <span class="nx">Vue</span><span class="o">::</span><span class="na">section</span><span class="p">(</span><span class="s1">&#39;titre&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="x">    Liste des articles</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="cp">&lt;?php</span> <span class="nx">Vue</span><span class="o">::</span><span class="na">fin</span><span class="p">()</span> <span class="cp">?&gt;</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="cp">&lt;?php</span> <span class="nx">Vue</span><span class="o">::</span><span class="na">section</span><span class="p">(</span><span class="s1">&#39;contenu&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="x">    &lt;h1&gt;Articles&lt;/h1&gt;</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="x">    </span><span class="cp">&lt;?php</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$articles</span> <span class="k">as</span> <span class="nv">$article</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="x">        &lt;article&gt;</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="x">            &lt;h2&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nx">e</span><span class="p">(</span><span class="nv">$article</span><span class="p">[</span><span class="s1">&#39;titre&#39;</span><span class="p">])</span> <span class="cp">?&gt;</span><span class="x">&lt;/h2&gt;</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="x">        &lt;/article&gt;</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="x">    </span><span class="cp">&lt;?php</span> <span class="k">endforeach</span><span class="p">;</span> <span class="cp">?&gt;</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="cp">&lt;?php</span> <span class="nx">Vue</span><span class="o">::</span><span class="na">fin</span><span class="p">()</span> <span class="cp">?&gt;</span>
 </code></pre></div>
+<hr />
+<h2 id="inclure-un-partial">Inclure un partial<a class="headerlink" href="#inclure-un-partial" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="x">&lt;!-- Inclure sans données --&gt;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="cp">&lt;?php</span> <span class="nx">Vue</span><span class="o">::</span><span class="na">inclure</span><span class="p">(</span><span class="s1">&#39;nav&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="x">&lt;!-- Inclure avec données --&gt;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="cp">&lt;?php</span> <span class="nx">Vue</span><span class="o">::</span><span class="na">inclure</span><span class="p">(</span><span class="s1">&#39;alerte&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;succes&#39;</span><span class="p">,</span> <span class="s1">&#39;message&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sauvegardé !&#39;</span><span class="p">])</span> <span class="cp">?&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="x">&lt;!-- src/vues/partials/alerte.php --&gt;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="x">&lt;div class=&quot;alerte alerte-</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nx">e</span><span class="p">(</span><span class="nv">$type</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x">&quot;&gt;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="x">    </span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nx">e</span><span class="p">(</span><span class="nv">$message</span><span class="p">)</span> <span class="cp">?&gt;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="x">&lt;/div&gt;</span>
+</code></pre></div>
+<hr />
+<h2 id="securite-echapper-les-variables">Sécurité — Échapper les variables<a class="headerlink" href="#securite-echapper-les-variables" title="Permanent link">&para;</a></h2>
+<p>Utilisez toujours la fonction <code>e()</code> (ou <code>htmlspecialchars()</code>) pour éviter les failles XSS :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="x">// Correct</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="cp">&lt;?</span><span class="o">=</span> <span class="nx">e</span><span class="p">(</span><span class="nv">$nom</span><span class="p">)</span> <span class="cp">?&gt;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="cp">&lt;?</span><span class="o">=</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nv">$nom</span><span class="p">,</span> <span class="nx">ENT_QUOTES</span><span class="p">,</span> <span class="s1">&#39;UTF-8&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="x">// Dangereux — ne jamais faire ça avec des données utilisateur</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$nom</span> <span class="cp">?&gt;</span>
+</code></pre></div>
+<hr />
+<h2 id="vue-404-personnalisee">Vue 404 personnalisée<a class="headerlink" href="#vue-404-personnalisee" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="x">&lt;!-- src/vues/404.php --&gt;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="x">&lt;!DOCTYPE html&gt;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="x">&lt;html lang=&quot;fr&quot;&gt;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="x">&lt;body&gt;</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="x">    &lt;h1&gt;404 — Page introuvable&lt;/h1&gt;</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="x">    &lt;a href=&quot;/&quot;&gt;Retour à l&#39;accueil&lt;/a&gt;</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="x">&lt;/body&gt;</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="x">&lt;/html&gt;</span>
+</code></pre></div>
+<hr />
+<h2 id="reference-vue">Référence — Vue<a class="headerlink" href="#reference-vue" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Méthode</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vue::rendu($nom, $donnees)</code></td>
+<td>Rendre une vue et retourner le HTML</td>
+</tr>
+<tr>
+<td><code>Vue::etendre($layout)</code></td>
+<td>Déclarer le gabarit à utiliser</td>
+</tr>
+<tr>
+<td><code>Vue::section($nom)</code></td>
+<td>Ouvrir une section nommée</td>
+</tr>
+<tr>
+<td><code>Vue::fin()</code></td>
+<td>Fermer la section courante</td>
+</tr>
+<tr>
+<td><code>Vue::ceder($nom, $defaut)</code></td>
+<td>Afficher le contenu d'une section</td>
+</tr>
+<tr>
+<td><code>Vue::inclure($nom, $donnees)</code></td>
+<td>Inclure un partial</td>
+</tr>
+<tr>
+<td><code>Vue::definirDossier($chemin)</code></td>
+<td>Changer le dossier des vues</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -897,7 +1304,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.instant", "search.highlight", "search.suggest", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>

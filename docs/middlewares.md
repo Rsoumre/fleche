@@ -17,6 +17,20 @@ $app->routeur->get('/admin', [AdminControleur::class, 'index'])
 
 ---
 
+## Middleware sur un groupe
+
+```php
+$app->routeur->groupe([
+    'prefixe'     => '/admin',
+    'middlewares' => [ConnexionMiddleware::class, AdminMiddleware::class],
+], function ($r) {
+    $r->get('/tableau',      [AdminControleur::class, 'tableau']);
+    $r->get('/utilisateurs', [AdminControleur::class, 'utilisateurs']);
+});
+```
+
+---
+
 ## Créer un middleware
 
 Un middleware implémente l'interface `Middleware` avec la méthode `traiter()`.
@@ -35,7 +49,7 @@ class ConnexionMiddleware implements Middleware
     public function traiter(Requete $requete, callable $suivant): Reponse
     {
         if (!Session::a('utilisateur_id')) {
-            return Reponse::json(['erreur' => 'Vous devez être connecté.'], 401);
+            return Reponse::rediriger('/connexion');
         }
 
         return $suivant($requete);
@@ -48,18 +62,16 @@ class ConnexionMiddleware implements Middleware
 ## Exécuter du code après le contrôleur
 
 ```php
-class JournalMiddleware implements Middleware
+class PerformanceMiddleware implements Middleware
 {
     public function traiter(Requete $requete, callable $suivant): Reponse
     {
-        // Avant le contrôleur
         $debut = microtime(true);
 
-        $reponse = $suivant($requete); // Appel du contrôleur
+        $reponse = $suivant($requete); // ← Appel du contrôleur
 
-        // Après le contrôleur
-        $duree = round((microtime(true) - $debut) * 1000);
-        error_log("Requête traitée en {$duree}ms");
+        $duree = round((microtime(true) - $debut) * 1000, 2);
+        Journalisation::debug("Requête traitée en {$duree}ms", ['uri' => $requete->uri]);
 
         return $reponse;
     }
@@ -68,15 +80,65 @@ class JournalMiddleware implements Middleware
 
 ---
 
-## Middleware inclus
+## Middleware CSRF
 
-### ConnexionMiddleware
+```php
+use Fleche\Middleware;
+use Fleche\Jeton;
 
-Vérifie qu'un utilisateur est connecté via la session. Retourne `401` sinon.
+class CsrfMiddleware implements Middleware
+{
+    public function traiter(Requete $requete, callable $suivant): Reponse
+    {
+        Jeton::verifierRequete($requete);
+        return $suivant($requete);
+    }
+}
+```
+
+---
+
+## Middlewares inclus
+
+### `ConnexionMiddleware`
+
+Vérifie qu'un utilisateur est connecté via la session.
 
 ```php
 use Fleche\Middlewares\ConnexionMiddleware;
 
 $app->routeur->get('/tableau-de-bord', [DashboardControleur::class, 'index'])
              ->middleware(ConnexionMiddleware::class);
+```
+
+### `AuthMiddleware`
+
+Vérifie la présence d'un en-tête `Authorization` (pour les API).
+
+```php
+use Fleche\Middlewares\AuthMiddleware;
+
+$app->routeur->get('/api/profil', [ApiControleur::class, 'profil'])
+             ->middleware(AuthMiddleware::class);
+```
+
+---
+
+## Ordre d'exécution
+
+Les middlewares s'exécutent dans l'ordre de déclaration (pipeline) :
+
+```
+Requête → Middleware1 → Middleware2 → Contrôleur → Middleware2 → Middleware1 → Réponse
+```
+
+---
+
+## Référence — Interface Middleware
+
+```php
+interface Middleware
+{
+    public function traiter(Requete $requete, callable $suivant): Reponse;
+}
 ```

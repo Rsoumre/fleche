@@ -1,15 +1,16 @@
 # Flèche
 
-**Flèche** est un framework PHP léger avec une API entièrement en français. Conçu pour être simple, lisible et facile à apprendre.
+**Flèche** est un framework PHP moderne avec une API entièrement en français. Conçu pour être élégant, rapide et accessible aux développeurs francophones.
 
 ---
 
 ## Pourquoi Flèche ?
 
-- **API en français** — méthodes, classes et fonctions nommées en français
-- **Léger** — aucune dépendance inutile, code minimal
+- **API 100% en français** — méthodes, classes et fonctions nommées en français
+- **Léger** — zéro dépendance inutile
+- **Complet** — routeur, ORM, validation, sessions, middlewares, CSRF, hachage, journalisation
 - **Expressif** — syntaxe fluide et lisible
-- **Complet** — routeur, contrôleurs, BDD, validation, sessions, middlewares
+- **PHP 8+** — promotions de propriétés, types d'union, match expression
 
 ---
 
@@ -37,8 +38,6 @@ php -S localhost:8080 -t public
 
 ## Démarrage rapide
 
-Ouvrez `public/index.php` et créez vos premières routes :
-
 ```php
 <?php
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -53,8 +52,14 @@ $app->routeur->get('/', function () {
 });
 
 $app->routeur->get('/utilisateurs/{id}', function ($req) {
-    $id = $req->parametres['id'];
-    return Reponse::json(['id' => $id]);
+    return Reponse::json(['id' => $req->parametre('id')]);
+});
+
+$app->routeur->groupe([
+    'prefixe'     => '/admin',
+    'middlewares' => [AuthMiddleware::class],
+], function ($r) {
+    $r->get('/tableau', [AdminControleur::class, 'tableau']);
 });
 
 $app->demarrer();
@@ -67,29 +72,59 @@ $app->demarrer();
 ```
 mon-projet/
 ├── public/
-│   └── index.php         # Point d'entrée
+│   └── index.php              # Point d'entrée
 ├── src/
-│   ├── Controleurs/      # Contrôleurs de l'application
-│   ├── Middlewares/      # Middlewares personnalisés
-│   └── vues/             # Fichiers de vues PHP
-├── vendor/               # Dépendances Composer
-├── .env                  # Variables d'environnement
+│   ├── Controleurs/           # Contrôleurs de l'application
+│   ├── Middlewares/           # Middlewares personnalisés
+│   └── vues/
+│       ├── layouts/           # Gabarits de page
+│       ├── partials/          # Morceaux réutilisables
+│       └── accueil.php
+├── stockage/
+│   └── logs/                  # Fichiers de logs
+├── vendor/                    # Dépendances Composer
+├── .env
 └── composer.json
 ```
 
 ---
 
-## En savoir plus
+## Vue d'ensemble des classes
+
+| Classe | Rôle |
+|---|---|
+| `Application` | Point d'entrée — initialise le framework |
+| `Routeur` | Gestion des routes HTTP |
+| `Requete` | Données de la requête entrante |
+| `Reponse` | Construction de la réponse HTTP |
+| `Vue` | Rendu de templates PHP avec héritage |
+| `DB` | Connexion et requêtes base de données |
+| `Requeteur` | Constructeur de requêtes SQL fluide |
+| `Modele` | Classe de base ORM |
+| `Validateur` | Validation des données |
+| `Session` | Gestion des sessions et messages flash |
+| `Hachage` | Hachage bcrypt des mots de passe |
+| `Jeton` | Protection CSRF |
+| `Paginateur` | Pagination des résultats |
+| `Journalisation` | Écriture de logs dans des fichiers |
+
+---
+
+## Pages de la documentation
 
 | Page | Description |
 |---|---|
-| [Routeur](routeur.md) | Définir des routes GET, POST, PUT, PATCH, DELETE |
+| [Routeur](routeur.md) | Routes GET, POST, PUT, PATCH, DELETE, groupes, middlewares |
 | [Contrôleurs](controleurs.md) | Organiser la logique dans des classes |
-| [Vues](vues.md) | Afficher du HTML avec des templates PHP |
-| [Réponse](reponse.md) | Retourner JSON, HTML, texte ou rediriger |
-| [Base de données](base-de-donnees.md) | Lire, insérer, modifier, supprimer |
-| [Validation](validation.md) | Valider les données utilisateur |
-| [Upload de fichiers](fichiers.md) | Gérer les fichiers envoyés par formulaire |
-| [Middlewares](middlewares.md) | Exécuter du code avant/après les routes |
-| [Sessions](sessions.md) | Persister des données entre les requêtes |
-| [Variables d'environnement](env.md) | Configurer l'application via `.env` |
+| [Vues](vues.md) | Templates PHP avec héritage de layouts |
+| [Réponse](reponse.md) | JSON, HTML, redirections, téléchargements, cookies |
+| [Base de données](base-de-donnees.md) | Requêteur fluide, jointures, transactions |
+| [Modèle ORM](modele.md) | Classe de base Active Record |
+| [Validation](validation.md) | Règles de validation des données |
+| [Sessions](sessions.md) | Sessions, flash, régénération |
+| [Sécurité](securite.md) | CSRF, hachage, protection XSS |
+| [Pagination](pagination.md) | Paginer les résultats facilement |
+| [Middlewares](middlewares.md) | Pipeline avant/après les routes |
+| [Journalisation](journalisation.md) | Logs fichiers par niveaux |
+| [Upload de fichiers](fichiers.md) | Gérer les fichiers de formulaires |
+| [Variables d'environnement](env.md) | Configuration via `.env` |

@@ -1,6 +1,6 @@
 site_name: Flèche
 site_url: https://rsoumre.github.io/fleche
-site_description: Framework PHP léger avec une API entièrement en français
+site_description: Framework PHP moderne avec une API entièrement en français
 site_author: Rsoumre
 
 repo_name: Rsoumre/fleche
@@ -40,6 +40,10 @@ nav:
     - Sessions: sessions.md
     - Validation: validation.md
     - Base de données: base-de-donnees.md
+    - Modèle ORM: modele.md
+    - Pagination: pagination.md
+    - Sécurité: securite.md
+    - Journalisation: journalisation.md
     - Upload de fichiers: fichiers.md
     - Variables d'environnement: env.md
 

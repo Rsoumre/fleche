@@ -1,12 +1,10 @@
 # Variables d'environnement
 
-Les variables d'environnement permettent de configurer l'application sans modifier le code source.
+Les variables d'environnement configurent l'application sans modifier le code source.
 
 ---
 
 ## Fichier .env
-
-Créez un fichier `.env` à la racine du projet en copiant `.env.exemple` :
 
 ```bash
 cp .env.exemple .env
@@ -16,6 +14,7 @@ cp .env.exemple .env
 APP_NOM=MonApp
 APP_ENV=developpement
 APP_URL=http://localhost:8080
+APP_DEBUG=true
 
 DB_HOTE=localhost
 DB_PORT=3306
@@ -24,7 +23,9 @@ DB_UTILISATEUR=root
 DB_MOT_DE_PASSE=secret
 ```
 
-> **Important** — Ne commitez jamais le fichier `.env`. Ajoutez-le dans `.gitignore`. Utilisez `.env.exemple` pour partager la structure sans les vraies valeurs.
+!!! warning "Sécurité"
+    Ne commitez jamais le fichier `.env`. Ajoutez-le dans `.gitignore`.
+    Utilisez `.env.exemple` pour partager la structure sans les vraies valeurs.
 
 ---
 
@@ -46,8 +47,9 @@ $env  = env('APP_ENV', 'production');
 | Variable | Description | Exemple |
 |---|---|---|
 | `APP_NOM` | Nom de l'application | `MonApp` |
-| `APP_ENV` | Environnement actuel | `developpement` / `production` |
+| `APP_ENV` | Environnement | `developpement` / `production` |
 | `APP_URL` | URL de base | `http://localhost:8080` |
+| `APP_DEBUG` | Activer les logs debug | `true` / `false` |
 | `DB_HOTE` | Hôte MySQL | `localhost` |
 | `DB_PORT` | Port MySQL | `3306` |
 | `DB_NOM` | Nom de la base | `ma_base` |
@@ -59,17 +61,22 @@ $env  = env('APP_ENV', 'production');
 ## Développement vs Production
 
 ```env
-# Développement — erreurs détaillées
+# Développement
 APP_ENV=developpement
+APP_DEBUG=true
 
-# Production — messages d'erreur génériques
+# Production
 APP_ENV=production
+APP_DEBUG=false
 ```
 
-Utilisez `env('APP_ENV')` dans votre code pour adapter le comportement :
-
 ```php
+// Adapter le comportement selon l'environnement
 if (env('APP_ENV') === 'developpement') {
     // Afficher les détails de l'erreur
+}
+
+if (env('APP_DEBUG')) {
+    Journalisation::debug('Détail interne', $data);
 }
 ```

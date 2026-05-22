@@ -12,6 +12,10 @@ class Routeur
         $this->requete = $requete;
     }
 
+    private string $prefixeGroupe = '';
+    private array $middlewaresGroupe = [];
+    private array $routesNommees = [];
+
     public function get(string $uri, callable|array $action): Route
     {
         return $this->ajouter('GET', $uri, $action);
@@ -22,10 +26,72 @@ class Routeur
         return $this->ajouter('POST', $uri, $action);
     }
 
+    public function put(string $uri, callable|array $action): Route
+    {
+        return $this->ajouter('PUT', $uri, $action);
+    }
+
+    public function patch(string $uri, callable|array $action): Route
+    {
+        return $this->ajouter('PATCH', $uri, $action);
+    }
+
+    public function delete(string $uri, callable|array $action): Route
+    {
+        return $this->ajouter('DELETE', $uri, $action);
+    }
+
+    public function any(string $uri, callable|array $action): void
+    {
+        foreach (['GET', 'POST', 'PUT', 'PATCH', 'DELETE'] as $methode) {
+            $this->ajouter($methode, $uri, $action);
+        }
+    }
+
+    public function groupe(array $options, callable $definition): void
+    {
+        $prefixePrecedent     = $this->prefixeGroupe;
+        $middlewaresPrecedents = $this->middlewaresGroupe;
+
+        $this->prefixeGroupe      = $prefixePrecedent . ($options['prefixe'] ?? '');
+        $this->middlewaresGroupe  = array_merge($middlewaresPrecedents, $options['middlewares'] ?? []);
+
+        $definition($this);
+
+        $this->prefixeGroupe     = $prefixePrecedent;
+        $this->middlewaresGroupe = $middlewaresPrecedents;
+    }
+
+    public function url(string $nom, array $parametres = []): string
+    {
+        if (!isset($this->routesNommees[$nom])) {
+            throw new \RuntimeException("Route nommée introuvable : {$nom}");
+        }
+        $uri = $this->routesNommees[$nom];
+        foreach ($parametres as $cle => $valeur) {
+            $uri = str_replace("{{$cle}}", $valeur, $uri);
+        }
+        return $uri;
+    }
+
     private function ajouter(string $methode, string $uri, callable|array $action): Route
     {
-        $route = new Route($methode, $uri, $action);
+        $uriComplete = rtrim($this->prefixeGroupe, '/') . '/' . ltrim($uri, '/');
+        $uriComplete = $uriComplete === '/' ? '/' : rtrim($uriComplete, '/');
+
+        $route = new Route($methode, $uriComplete, $action);
+
+        foreach ($this->middlewaresGroupe as $middleware) {
+            $route->middleware($middleware);
+        }
+
         $this->routes[] = $route;
+        return $route;
+    }
+
+    public function nommer(string $nom, Route $route): Route
+    {
+        $this->routesNommees[$nom] = $route->uri;
         return $route;
     }
 

@@ -4,7 +4,7 @@ Le routeur associe une URL et une méthode HTTP à une action (fonction ou contr
 
 ---
 
-## Méthodes disponibles
+## Méthodes HTTP disponibles
 
 | Méthode | Usage |
 |---|---|
@@ -13,6 +13,7 @@ Le routeur associe une URL et une méthode HTTP à une action (fonction ou contr
 | `put($uri, $action)` | Remplacement complet |
 | `patch($uri, $action)` | Mise à jour partielle |
 | `delete($uri, $action)` | Suppression |
+| `any($uri, $action)` | Répond à toutes les méthodes |
 
 ---
 
@@ -28,7 +29,7 @@ $app->routeur->post('/contact', function ($req) {
 });
 
 $app->routeur->delete('/articles/{id}', function ($req) {
-    return Reponse::json(['supprime' => $req->parametres['id']]);
+    return Reponse::json(['supprime' => $req->parametre('id')]);
 });
 ```
 
@@ -36,26 +37,24 @@ $app->routeur->delete('/articles/{id}', function ($req) {
 
 ## Paramètres d'URL
 
-Les paramètres sont définis avec `{nom}` dans l'URI et accessibles via `$req->parametres`.
+Les paramètres sont définis avec `{nom}` et accessibles via `$req->parametre()`.
 
 ```php
 $app->routeur->get('/articles/{slug}', function ($req) {
-    $slug = $req->parametres['slug'];
+    $slug = $req->parametre('slug');
     return Reponse::texte("Article : {$slug}");
 });
 
 // Plusieurs paramètres
 $app->routeur->get('/categories/{categorie}/articles/{id}', function ($req) {
-    $categorie = $req->parametres['categorie'];
-    $id        = $req->parametres['id'];
+    $categorie = $req->parametre('categorie');
+    $id        = $req->parametre('id');
 });
 ```
 
 ---
 
 ## Utiliser un contrôleur
-
-Passe un tableau `[Classe::class, 'methode']` comme action :
 
 ```php
 $app->routeur->get('/articles',         [ArticleControleur::class, 'liste']);
@@ -69,8 +68,6 @@ $app->routeur->delete('/articles/{id}', [ArticleControleur::class, 'supprimer'])
 
 ## Middlewares sur une route
 
-Chaîne un ou plusieurs middlewares avec `->middleware()` :
-
 ```php
 // Un seul middleware
 $app->routeur->get('/profil', [ProfilControleur::class, 'index'])
@@ -83,7 +80,49 @@ $app->routeur->get('/admin', [AdminControleur::class, 'index'])
 
 ---
 
-## Formulaires HTML (PUT / PATCH / DELETE)
+## Groupes de routes
+
+Un groupe applique un **préfixe** et des **middlewares** à plusieurs routes d'un coup.
+
+```php
+$app->routeur->groupe([
+    'prefixe'     => '/admin',
+    'middlewares' => [ConnexionMiddleware::class],
+], function ($r) {
+    $r->get('/tableau',          [AdminControleur::class, 'tableau']);
+    $r->get('/utilisateurs',     [AdminControleur::class, 'utilisateurs']);
+    $r->delete('/articles/{id}', [AdminControleur::class, 'supprimerArticle']);
+});
+```
+
+Les groupes peuvent être **imbriqués** :
+
+```php
+$app->routeur->groupe(['prefixe' => '/api'], function ($r) {
+    $r->groupe(['prefixe' => '/v1', 'middlewares' => [AuthMiddleware::class]], function ($r) {
+        $r->get('/profil', [ProfilControleur::class, 'index']);
+    });
+});
+// → GET /api/v1/profil (avec AuthMiddleware)
+```
+
+---
+
+## Routes nommées
+
+```php
+$app->routeur->nommer('article.afficher',
+    $app->routeur->get('/articles/{id}', [ArticleControleur::class, 'afficher'])
+);
+
+// Générer l'URL depuis n'importe où
+$url = $app->routeur->url('article.afficher', ['id' => 42]);
+// → /articles/42
+```
+
+---
+
+## Formulaires HTML — Simulation de méthode
 
 Les formulaires HTML ne supportent que `GET` et `POST`. Utilisez le champ caché `_method` :
 
@@ -94,4 +133,15 @@ Les formulaires HTML ne supportent que `GET` et `POST`. Utilisez le champ caché
 </form>
 ```
 
-Flèche lit automatiquement `_method` et redirige vers la bonne route.
+---
+
+## Référence
+
+| Méthode | Description |
+|---|---|
+| `get/post/put/patch/delete($uri, $action)` | Enregistrer une route |
+| `any($uri, $action)` | Route pour toutes les méthodes HTTP |
+| `groupe($options, $callback)` | Grouper des routes |
+| `nommer($nom, $route)` | Nommer une route |
+| `url($nom, $parametres)` | Générer l'URL d'une route nommée |
+| `->middleware(string ...$classes)` | Attacher des middlewares à une route |

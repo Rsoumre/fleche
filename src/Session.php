@@ -33,11 +33,15 @@ class Session
 
     public static function vider(): void
     {
-        session_destroy();
         $_SESSION = [];
+        session_destroy();
     }
 
-    // Message flash : lu une seule fois puis supprimé
+    public static function regenerer(bool $supprimerAncienne = true): void
+    {
+        session_regenerate_id($supprimerAncienne);
+    }
+
     public static function flash(string $cle, string $message): void
     {
         $_SESSION['_flash'][$cle] = $message;
@@ -48,5 +52,29 @@ class Session
         $message = $_SESSION['_flash'][$cle] ?? null;
         unset($_SESSION['_flash'][$cle]);
         return $message;
+    }
+
+    public static function aFlash(string $cle): bool
+    {
+        return isset($_SESSION['_flash'][$cle]);
+    }
+
+    public static function toutesLesFlash(): array
+    {
+        $flash = $_SESSION['_flash'] ?? [];
+        unset($_SESSION['_flash']);
+        return $flash;
+    }
+
+    public static function id(): string
+    {
+        return session_id();
+    }
+
+    public static function pousser(string $cle, mixed $valeur): void
+    {
+        $tableau   = (array) ($_SESSION[$cle] ?? []);
+        $tableau[] = $valeur;
+        $_SESSION[$cle] = $tableau;
     }
 }
