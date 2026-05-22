@@ -172,8 +172,10 @@ body {
   margin: 0 auto !important;
 }
 
-/* Masquer le H1 auto-généré (déjà affiché dans la sidebar) */
-.md-content__inner > h1 {
+/* Masquer le H1 (déjà affiché dans la sidebar) */
+.md-content__inner > h1,
+.md-content__inner h1:first-of-type,
+.md-typeset h1 {
   display: none !important;
 }
 
